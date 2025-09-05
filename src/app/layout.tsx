@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import PreloaderWrapper from "@/components/PreloaderWrapper";
+import { FloatingSidebars } from "@/components/FloatingSidebars";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
       </head>
       <body className="bg-black text-gray-100 antialiased overflow-x-hidden">
         <PreloaderWrapper>
+          <FloatingSidebars />
           {children}
         </PreloaderWrapper>
       </body>

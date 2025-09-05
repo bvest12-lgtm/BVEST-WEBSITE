@@ -79,7 +79,6 @@ export function Hero() {
             className="flex justify-center lg:justify-end"
           >
             <div className="relative w-full max-w-xl">
-              <div className="absolute -inset-4 bg-gradient-to-r from-[#36D399]/20 to-[#38BDF8]/20 rounded-3xl blur-xl opacity-70 animate-pulse"></div>
               <div className="relative">
                 <Image
                   src="/logo.png"
