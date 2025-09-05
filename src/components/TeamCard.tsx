@@ -5,7 +5,7 @@ import Image from "next/image";
 interface TeamCardProps {
   name: string;
   role: string;
-  photoUrl: string;
+  photoUrl?: string;
   linkedinUrl?: string;
   githubUrl?: string;
   twitterUrl?: string;
@@ -35,12 +35,12 @@ export function TeamCard({
 
       {/* Photo container */}
       <div className="relative h-64 overflow-hidden">
-        <Image
+        {/* <Image
           src={photoUrl}
           alt={name}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-110"
-        />
+        /> */}
         {/* Photo overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
       </div>
