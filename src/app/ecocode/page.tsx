@@ -2,37 +2,36 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { HackathonLanding } from "@/components/hackathon/HackathonLanding";
+import { HackathonAbout } from "@/components/hackathon/HackathonAbout";
+import { HackathonGuests } from "@/components/hackathon/HackathonGuests";
+import Timeline from "@/components/Timeline";
+import HowToApply from "@/components/HowToApply";
+import ProblemStatements from "@/components/ProblemStatements";
 
-import { Hero } from "@/components/Hero";
-import { Hackathon } from "@/components/Hackathon";
-import { EventCardGrid } from "@/components/EventCard";
-import { TeamCardGrid } from "@/components/TeamCard";
-import { AnimatedBackground } from "@/components/AnimatedBackground";
-import { Sponsors } from "@/components/Sponsors";
-
-export default function Home() {
+export default function EcoCodePage() {
   const containerRef = useRef<HTMLDivElement>(null);
-
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start start", "end end"],
   });
 
   const sections = [
-    <Hero key="hero" />,
-    <Hackathon key="hackathon" />,
-    <EventCardGrid key="events" />,
+    <HackathonLanding key="landing" />,
+    <HackathonAbout key="about" />,
+    <HowToApply key="apply" />,
+    <ProblemStatements key="problems" />,
+    <Timeline key="timeline" />,
+    <HackathonGuests key="guests" />,
   ];
 
   const transforms = sections.map((_, i) => {
     const totalSections = sections.length;
     const sectionStart = i / totalSections;
     const sectionEnd = (i + 1) / totalSections;
-    const sectionMid = (sectionStart + sectionEnd) / 2;
 
-    // Window where section is fully visible (snap effect)
-    const fadeInEnd = sectionStart + (1 / totalSections) * 0.30;
-    const fadeOutStart = sectionEnd - (1 / totalSections) * 0.30;
+    const fadeInEnd = sectionStart + (1 / totalSections) * 0.3;
+    const fadeOutStart = sectionEnd - (1 / totalSections) * 0.3;
 
     const opacity = useTransform(
       scrollYProgress,
@@ -46,16 +45,12 @@ export default function Home() {
       [i === 0 ? "0%" : "50%", "0%", "0%", "-50%"]
     );
 
-    const zIndex = sections.length - i;
-
-    return { opacity, x, zIndex };
+    return { opacity, x };
   });
 
   return (
     <div ref={containerRef} className="relative">
-      <AnimatedBackground />
-
-      <div className="relative h-[700vh]">
+      <div className="relative h-[600vh]">
         <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
           {sections.map((section, i) => (
             <motion.div
@@ -63,7 +58,7 @@ export default function Home() {
               style={{
                 x: transforms[i].x,
                 opacity: transforms[i].opacity,
-                zIndex: transforms[i].zIndex,
+                zIndex: sections.length - i,
                 position: "absolute",
                 top: 0,
                 left: 0,
@@ -73,10 +68,10 @@ export default function Home() {
                 alignItems: "center",
                 justifyContent: "center",
                 padding: "0 1rem",
-                pointerEvents: "none",
+                pointerEvents: i === 0 ? "auto" : "none",
               }}
             >
-              <div className="w-full max-w-6xl pointer-events-auto">
+              <div className="w-full max-w-6xl">
                 {section}
               </div>
             </motion.div>

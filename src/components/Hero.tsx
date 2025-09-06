@@ -28,7 +28,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="bg-gradient-to-r from-[#36D399] to-[#38BDF8] bg-clip-text text-transparent">
-                BVEST 2023
+                BVEST 2025
               </span>
               <br />
               <span className="text-white">Greenovate</span>
@@ -42,7 +42,7 @@ export function Hero() {
             >
               <div className="inline-flex items-center px-4 py-2 bg-[#111827] rounded-full border border-[#1F2937] mb-4">
                 <span className="h-2 w-2 bg-[#36D399] rounded-full mr-2 animate-pulse"></span>
-                <span className="text-[#E5E7EB] font-medium">October 8-9, 2023</span>
+                <span className="text-[#E5E7EB] font-medium">October 8-9, 2025</span>
               </div>
               <p className="text-lg md:text-xl text-[#E5E7EB] mt-4 max-w-lg mx-auto lg:mx-0">
                 Join us for 24 hours of innovation, creativity, and sustainable technology solutions

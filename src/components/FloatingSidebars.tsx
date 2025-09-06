@@ -1,15 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { FaHome, FaLaptopCode, FaCalendarAlt, FaUsers, FaHandshake } from "react-icons/fa";
 import { FaXTwitter, FaInstagram, FaLinkedin, FaGithub, FaDiscord } from "react-icons/fa6";
 
 const navItems = [
-  { icon: <FaHome className="w-6 h-6" />, label: "HOME" },
-  { icon: <FaLaptopCode className="w-6 h-6" />, label: "HACKATHON" },
-  { icon: <FaCalendarAlt className="w-6 h-6" />, label: "EVENTS" },
-  { icon: <FaUsers className="w-6 h-6" />, label: "TEAM" },
-  { icon: <FaHandshake className="w-6 h-6" />, label: "SPONSORS" },
+  { icon: <FaHome className="w-6 h-6" />, label: "HOME", path: "/" },
+  { icon: <FaLaptopCode className="w-6 h-6" />, label: "HACKATHON", path: "/ecocode" },
+  { icon: <FaCalendarAlt className="w-6 h-6" />, label: "EVENTS", path: "/events" },
+  { icon: <FaUsers className="w-6 h-6" />, label: "TEAM", path: "/team" },
+  { icon: <FaHandshake className="w-6 h-6" />, label: "SPONSORS", path: "/sponsors" },
 ];
 
 const socialItems = [
@@ -21,6 +23,9 @@ const socialItems = [
 ];
 
 export function FloatingSidebars() {
+  const pathname = usePathname();
+  const isActive = (path: string) => pathname === path;
+
   return (
     <>
       {/* Left Navigation Sidebar */}
@@ -33,18 +38,26 @@ export function FloatingSidebars() {
         <div className="bg-slate-900/80 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-slate-700/50">
           <nav className="flex flex-col items-center space-y-6">
             {navItems.map((item, index) => (
-              <a 
+              <Link 
                 key={index} 
-                href={`#${item.label.toLowerCase()}`}
-                className="group flex flex-col items-center text-slate-300 hover:text-white transition-colors"
+                href={item.path}
+                className={`group flex flex-col items-center transition-colors ${
+                  isActive(item.path) ? 'text-white' : 'text-slate-400 hover:text-white'
+                }`}
               >
-                <span className="p-2 bg-slate-800/50 rounded-xl group-hover:bg-blue-500/20 transition-colors">
+                <span className={`p-2 rounded-xl transition-colors ${
+                  isActive(item.path) 
+                    ? 'bg-gradient-to-r from-blue-500 to-blue-600' 
+                    : 'bg-slate-800/50 group-hover:bg-blue-500/20'
+                }`}>
                   {item.icon}
                 </span>
-                <span className="mt-1 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className={`mt-1 text-xs font-medium ${
+                  isActive(item.path) ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
+                } transition-opacity`}>
                   {item.label}
                 </span>
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
