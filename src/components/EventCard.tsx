@@ -19,6 +19,10 @@ export function EventCard({
   date,
   location,
 }: EventCardProps) {
+  // Default image and redirect URL
+  const defaultImage = "https://via.placeholder.com/400x300/1F2937/38BDF8?text=Event+Image";
+  const defaultRedirect = "#";
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -36,10 +40,14 @@ export function EventCard({
       {/* Image container */}
       <div className="relative h-48 overflow-hidden">
         <Image
-          src={imageUrl}
+          src={imageUrl || defaultImage}
           alt={title}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-110"
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.src = defaultImage;
+          }}
         />
         {/* Image overlay gradient */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -109,7 +117,11 @@ export function EventCard({
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          onClick={() => window.open(redirectUrl, "_blank")}
+          onClick={() => {
+            if (redirectUrl && redirectUrl !== '#') {
+              window.open(redirectUrl, "_blank");
+            }
+          }}
           className="group/btn relative w-full px-6 py-3 bg-gradient-to-r from-[#36D399] to-[#38BDF8] text-black font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#36D399]/30"
         >
           <span className="relative z-10 flex items-center justify-center gap-2">
@@ -152,8 +164,8 @@ export function EventCardGrid() {
       title: "Startup Pitch Competition",
       description:
         "Watch promising startups pitch their innovative ideas to a panel of investors and industry experts.",
-      imageUrl:"",
-      redirectUrl: "",
+      imageUrl: "https://via.placeholder.com/400x300/1F2937/7C3AED?text=Startup+Pitch",
+      redirectUrl: "https://example.com/startup-pitch",
       date: "April 22, 2024",
       location: "New York, NY",
     },

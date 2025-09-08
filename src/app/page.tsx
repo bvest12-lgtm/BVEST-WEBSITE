@@ -5,10 +5,8 @@ import { useRef } from "react";
 
 import { Hero } from "@/components/Hero";
 import { Hackathon } from "@/components/Hackathon";
-import { EventCardGrid } from "@/components/EventCard";
-import { TeamCardGrid } from "@/components/TeamCard";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
-import { Sponsors } from "@/components/Sponsors";
+import { EventDetails } from "@/components/events/EventDetails";
 
 export default function Home() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -21,7 +19,7 @@ export default function Home() {
   const sections = [
     <Hero key="hero" />,
     <Hackathon key="hackathon" />,
-    <EventCardGrid key="events" />,
+    <EventDetails key="event-details" />,
   ];
 
   const transforms = sections.map((_, i) => {
