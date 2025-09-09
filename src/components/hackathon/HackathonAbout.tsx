@@ -31,17 +31,14 @@ export function HackathonAbout() {
               Building a Sustainable Future Through Code
             </h3>
             <p className="text-slate-300 text-lg leading-relaxed">
-              EcoCode is a 24-hour hackathon where developers, designers, and innovators come together to create technology solutions for environmental challenges. Join us to build projects that make a real impact on sustainability and climate change.
-            </p>
-            <p className="text-slate-300 text-lg leading-relaxed">
-              Whether you're a seasoned developer or just starting out, EcoCode provides the perfect environment to learn, collaborate, and create something meaningful.
+            EcoCode is the premier hackathon of BVEST, a mission-driven event where top innovators tackle the planet's most urgent environmental challenges. This isn't just a competition; it's a high-energy, 24-hour sprint to build groundbreaking solutions for a sustainable future. At EcoCode, your skills meet real-world impact. You'll work on live problems, design innovative tech, and code for a cause that matters. This is where your passion for technology fuels a global change, proving that a single line of code can help build a better, greener world.
             </p>
             
             <div className="grid grid-cols-2 gap-4 mt-8">
               <StatCard number="24" label="Hours" />
-              <StatCard number="200+" label="Participants" />
-              <StatCard number="10+" label="Workshops" />
-              <StatCard number="5" label="Tracks" />
+              <StatCard number="300+" label="RegistrationsS" />
+              <StatCard number="20+" label="Problem Statements" />
+              <StatCard number="6" label="Tracks" />
             </div>
           </motion.div>
 
@@ -55,11 +52,12 @@ export function HackathonAbout() {
             <h3 className="text-xl font-semibold text-slate-100 mb-6">Tracks & Themes</h3>
             <div className="space-y-4">
               {[
-                { title: "Clean Energy", icon: "⚡" },
-                { title: "Sustainable Agriculture", icon: "🌱" },
-                { title: "Waste Management", icon: "♻️" },
-                { title: "Climate Action", icon: "🌍" },
-                { title: "Smart Cities", icon: "🏙️" },
+                { title: "Energy Conservation & Efficiency", icon: "⚡" },
+                { title: "Sustainable Agriculture & Food System", icon: "🌱" },
+                { title: "Waste Management & Circular Economy", icon: "♻️" },
+                { title: "Environmental Awareness & Education", icon: "🌍" },
+                { title: "Water Conservation", icon: "💧" },
+                { title: "Environmental Policy & Governance", icon: "🏙️" },
               ].map((track, index) => (
                 <div key={index} className="flex items-center space-x-4 p-3 bg-slate-800/30 rounded-lg hover:bg-slate-700/50 transition-colors">
                   <span className="text-2xl">{track.icon}</span>

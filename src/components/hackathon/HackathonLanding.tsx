@@ -6,23 +6,18 @@ import { FaUsers } from "@/components/ui/Icons";
 
 export function HackathonLanding() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-32 px-4 sm:px-6 lg:px-8">
-      {/* Background elements */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/80 to-slate-950"></div>
-        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
-      </div>
+    <section className="relative overflow-hidden py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-transparent">
 
-      <div className="max-w-7xl mx-auto relative">
+      <div className="max-w-7xl mx-auto relative bg-transparent">
         {/* Hero content */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-20 bg-transparent">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-block px-4 py-2 mb-6 rounded-full bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 text-blue-400 text-sm font-medium"
+            className="inline-block px-4 py-2 mb-6 rounded-full backdrop-blur-sm text-blue-300 text-sm font-medium"
           >
-            BVEST 12.0 Presents
+            BVEST 12 Presents
           </motion.div>
           
           <motion.h1
@@ -40,7 +35,7 @@ export function HackathonLanding() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10"
           >
-            Code for a sustainable future at India's premier green hackathon
+            Where Innovation Fuels Sustainability
           </motion.p>
           
           <motion.div
@@ -58,7 +53,7 @@ export function HackathonLanding() {
             </a>
             <a
               href="#about"
-              className="px-8 py-4 bg-slate-800/50 hover:bg-slate-700/50 text-white font-medium rounded-full border border-slate-700 hover:border-slate-600 transition-colors duration-300"
+              className="px-8 py-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full backdrop-blur-sm transition-all duration-300"
             >
               Learn More
             </a>
@@ -75,7 +70,7 @@ export function HackathonLanding() {
         >
           <StatCard 
             icon={<FaTrophy className="w-6 h-6" />}
-            value="$10,000+"
+            value="-"
             label="In Prizes"
             color="from-yellow-400 to-yellow-600"
           />
@@ -93,8 +88,8 @@ export function HackathonLanding() {
           />
           <StatCard 
             icon={<FaMapMarkerAlt className="w-6 h-6" />}
-            value="Hybrid"
-            label="Online + Onsite"
+            value="Offline"
+            label="Live & In-Action"
             color="from-purple-400 to-purple-600"
           />
         </motion.div>
@@ -109,12 +104,12 @@ export function HackathonLanding() {
 
 function StatCard({ icon, value, label, color }: { icon: React.ReactNode; value: string; label: string; color: string }) {
   return (
-    <div className="bg-slate-900/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-800 hover:border-slate-700 transition-all duration-300 hover:-translate-y-1">
+    <div className="backdrop-blur-xl bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
       <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto bg-gradient-to-r ${color} text-white`}>
         {icon}
       </div>
-      <div className="text-2xl font-bold text-center mb-1">{value}</div>
-      <div className="text-slate-400 text-sm text-center">{label}</div>
+      <div className="text-2xl font-bold text-center mb-1 text-white">{value}</div>
+      <div className="text-white/70 text-sm text-center">{label}</div>
     </div>
   );
 }

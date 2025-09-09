@@ -20,7 +20,7 @@ export function Sponsors() {
       sponsors: [
         {
           name: "Sponsor 1",
-          logo: "/sponsors/title-sponsor.png",
+          logo: "/logo.png",
           width: 300,
           height: 100,
         },
@@ -31,13 +31,13 @@ export function Sponsors() {
       sponsors: [
         {
           name: "Sponsor 2",
-          logo: "/sponsors/co-sponsor-1.png",
+          logo: "/logo.png",
           width: 200,
           height: 80,
         },
         {
           name: "Sponsor 3",
-          logo: "/sponsors/co-sponsor-2.png",
+          logo: "/logo.png",
           width: 200,
           height: 80,
         },
@@ -48,7 +48,7 @@ export function Sponsors() {
       sponsors: [
         {
           name: "Food Partner",
-          logo: "/sponsors/food-partner.png",
+          logo: "/logo.png",
           width: 180,
           height: 80,
         },
@@ -59,13 +59,13 @@ export function Sponsors() {
       sponsors: [
         {
           name: "Partner 1",
-          logo: "/sponsors/partner-1.png",
+          logo: "/logo.png",
           width: 150,
           height: 70,
         },
         {
           name: "Partner 2",
-          logo: "/sponsors/partner-2.png",
+          logo: "/logo.png",
           width: 150,
           height: 70,
         },
@@ -122,22 +122,6 @@ export function Sponsors() {
           </motion.div>
         ))}
       </div>
-
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6, delay: 0.3 }}
-        className="mt-20 text-center"
-      >
-        <p className="text-slate-400 mb-6">Interested in sponsoring?</p>
-        <a
-          href="#contact"
-          className="inline-flex items-center px-8 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl hover:shadow-blue-500/20"
-        >
-          Become a Sponsor
-        </a>
-      </motion.div>
     </section>
   );
 }

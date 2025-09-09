@@ -5,10 +5,9 @@ import Image from "next/image";
 interface EventCardProps {
   title: string;
   description: string;
-  imageUrl: string;
+  imageUrl?: string;
   redirectUrl: string;
-  date?: string;
-  location?: string;
+  collaboratingSocieties?: string[];
 }
 
 export function EventCard({
@@ -16,12 +15,14 @@ export function EventCard({
   description,
   imageUrl,
   redirectUrl,
-  date,
-  location,
+  collaboratingSocieties = ['EduMinerva', 'ISTE'],
 }: EventCardProps) {
   // Default image and redirect URL
-  const defaultImage = "https://via.placeholder.com/400x300/1F2937/38BDF8?text=Event+Image";
+  const defaultImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRszylXBlV5rwf2CFoTh6oZbOFZxWtsfIOd4A&s";
   const defaultRedirect = "#";
+  
+  // Use the provided image or default to the BVEST poster
+  const eventImage = imageUrl || defaultImage;
 
   return (
     <motion.div
@@ -40,7 +41,7 @@ export function EventCard({
       {/* Image container */}
       <div className="relative h-48 overflow-hidden">
         <Image
-          src={imageUrl || defaultImage}
+          src={eventImage}
           alt={title}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -50,68 +51,35 @@ export function EventCard({
           }}
         />
         {/* Image overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+        {/* Event title overlay */}
+        <div className="absolute bottom-0 left-0 right-0 p-4">
+          <h3 className="text-xl font-bold text-white drop-shadow-md">{title}</h3>
+        </div>
       </div>
 
       {/* Content */}
-      <div className="relative z-20 p-6">
-        {/* Event details */}
-        {(date || location) && (
-          <div className="flex items-center gap-4 mb-3 text-sm text-[#9CA3AF]">
-            {date && (
-              <div className="flex items-center gap-1">
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-                <span>{date}</span>
-              </div>
-            )}
-            {location && (
-              <div className="flex items-center gap-1">
-                <svg
-                  className="w-4 h-4"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-                <span>{location}</span>
-              </div>
-            )}
-          </div>
-        )}
-
-        {/* Title */}
-        <h3 className="text-xl font-bold mb-3 text-white group-hover:text-[#36D399] transition-colors duration-300">
-          {title}
-        </h3>
-
+      <div className="relative z-20 p-6 pt-4">
         {/* Description */}
-        <p className="text-[#D1D5DB] text-sm leading-relaxed mb-6 line-clamp-3">
+        <p className="text-[#D1D5DB] text-sm leading-relaxed mb-4 line-clamp-3">
           {description}
         </p>
+
+        {/* Collaborating Societies */}
+        <div className="mb-4">
+          <p className="text-xs text-[#9CA3AF] mb-2">Collaborating Societies:</p>
+          <div className="flex flex-wrap gap-2">
+            {collaboratingSocieties.map((society, index) => (
+              <span 
+                key={index}
+                className="px-3 py-1 text-xs font-medium rounded-full bg-[#1F2937] text-[#E5E7EB] border border-[#374151]"
+              >
+                {society}
+              </span>
+            ))}
+          </div>
+        </div>
+
 
         {/* Button */}
         <motion.button
@@ -125,7 +93,7 @@ export function EventCard({
           className="group/btn relative w-full px-6 py-3 bg-gradient-to-r from-[#36D399] to-[#38BDF8] text-black font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#36D399]/30"
         >
           <span className="relative z-10 flex items-center justify-center gap-2">
-            <span>Learn More</span>
+            <span>Register Now</span>
             <svg
               className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300"
               fill="none"
@@ -154,30 +122,49 @@ export function EventCardGrid() {
       title: "Tech Innovation Summit",
       description:
         "Join industry leaders and innovators for a day of cutting-edge technology discussions, workshops, and networking opportunities.",
-      imageUrl:
-        "https://via.placeholder.com/400x300/1F2937/36D399?text=Tech+Summit",
+      imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       redirectUrl: "https://example.com/tech-summit",
-      date: "March 15, 2024",
-      location: "San Francisco, CA",
+      collaboratingSocieties: ["EduMinerva", "ISTE"]
     },
     {
       title: "Startup Pitch Competition",
       description:
         "Watch promising startups pitch their innovative ideas to a panel of investors and industry experts.",
-      imageUrl: "https://via.placeholder.com/400x300/1F2937/7C3AED?text=Startup+Pitch",
+      imageUrl: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       redirectUrl: "https://example.com/startup-pitch",
-      date: "April 22, 2024",
-      location: "New York, NY",
+      collaboratingSocieties: ["EduMinerva", "ISTE"]
     },
     {
       title: "AI & Machine Learning Workshop",
       description:
         "Hands-on workshop covering the latest developments in artificial intelligence and machine learning technologies.",
-      imageUrl:
-        "https://via.placeholder.com/400x300/1F2937/86EFAC?text=AI+Workshop",
+      imageUrl: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1408&q=80",
       redirectUrl: "https://example.com/ai-workshop",
-      date: "May 10, 2024",
-      location: "Austin, TX",
+      collaboratingSocieties: ["EduMinerva", "ISTE"]
+    },
+    {
+      title: "Blockchain Revolution",
+      description:
+        "Explore the future of decentralized technologies and their impact on various industries.",
+      imageUrl: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+      redirectUrl: "https://example.com/blockchain",
+      collaboratingSocieties: ["EduMinerva", "ISTE"]
+    },
+    {
+      title: "Cybersecurity Symposium",
+      description:
+        "Learn about the latest threats and defense mechanisms in the ever-evolving cybersecurity landscape.",
+      imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      redirectUrl: "https://example.com/cyber-symposium",
+      collaboratingSocieties: ["EduMinerva", "ISTE"]
+    },
+    {
+      title: "Future of Web Development",
+      description:
+        "Discover the latest trends, frameworks, and best practices in modern web development.",
+      imageUrl: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80",
+      redirectUrl: "https://example.com/web-dev-future",
+      collaboratingSocieties: ["EduMinerva", "ISTE"]
     },
   ];
 
@@ -200,10 +187,8 @@ export function EventCardGrid() {
               key={index}
               title={event.title}
               description={event.description}
-              imageUrl={event.imageUrl}
               redirectUrl={event.redirectUrl}
-              date={event.date}
-              location={event.location}
+              collaboratingSocieties={event.collaboratingSocieties}
             />
           ))}
         </div>

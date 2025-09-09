@@ -1,4 +1,5 @@
 import { FloatingSidebars } from "@/components/FloatingSidebars";
+import { AnimatedBackground } from "@/components/AnimatedBackground";
 
 export default function EventsLayout({
   children,
@@ -7,6 +8,7 @@ export default function EventsLayout({
 }) {
   return (
     <>
+      <AnimatedBackground />
       <FloatingSidebars />
       {children}
     </>

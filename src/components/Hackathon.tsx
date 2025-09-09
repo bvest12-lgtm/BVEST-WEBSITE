@@ -1,5 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 import Image from 'next/image';
 
 export function Hackathon() {
@@ -33,8 +34,7 @@ export function Hackathon() {
             transition={{ duration: 0.6 }}
           >
             <span className="bg-gradient-to-r from-[#36D399] to-[#38BDF8] bg-clip-text text-transparent">
-              24-Hour Hackathon
-            </span>
+EcoCode            </span>
           </motion.h2>
           <motion.p 
             className="text-xl text-[#E5E7EB] max-w-3xl mx-auto"
@@ -43,7 +43,7 @@ export function Hackathon() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            Code, Create, and Innovate for a Sustainable Future
+            Where Innovation Fuels Sustainability
           </motion.p>
         </div>
 
@@ -66,10 +66,9 @@ export function Hackathon() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">Innovation Meets Sustainability</h3>
+                  <h3 className="text-xl font-bold text-white mb-2">Challenges</h3>
                   <p className="text-[#D1D5DB]">
-                    Join developers, designers, and innovators to build solutions that address real-world environmental challenges through technology.
-                  </p>
+                  Tackle real-world problems in environmental technology, sustainable development, and green energy. Bring your A-game and code a solution that makes a difference.                  </p>
                 </div>
               </div>
 
@@ -113,14 +112,14 @@ export function Hackathon() {
                   <div className="absolute inset-0 bg-gradient-to-r from-[#38BDF8] to-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </button>
 
-                <button className="group relative px-8 py-3.5 border-2 border-[#38BDF8] text-[#E5E7EB] font-bold rounded-full overflow-hidden transition-all duration-300 hover:bg-[#38BDF8]/10">
+                <Link href="/ecocode" className="group relative px-8 py-3.5 border-2 border-[#38BDF8] text-[#E5E7EB] font-bold rounded-full overflow-hidden transition-all duration-300 hover:bg-[#38BDF8]/10">
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     <span>Learn More</span>
                     <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </span>
-                </button>
+                </Link>
               </div>
             </div>
           </motion.div>

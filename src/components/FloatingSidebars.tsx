@@ -29,48 +29,62 @@ export function FloatingSidebars() {
   return (
     <>
       {/* Left Navigation Sidebar */}
-      <motion.div 
-        initial={{ x: -100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.5 }}
-        className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden lg:block"
-      >
-        <div className="bg-slate-900/80 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-slate-700/50">
+      <style jsx global>{`
+        .backdrop-blur-xl {
+          backdrop-filter: saturate(180%) blur(24px);
+          -webkit-backdrop-filter: saturate(180%) blur(24px);
+        }
+      `}</style>
+      {/* Left Sidebar - Desktop */}
+      <div className="fixed left-6 top-1/2 -translate-y-1/2 z-50 hidden lg:block">
+        <div className="backdrop-blur-xl bg-white/5 rounded-2xl p-3 shadow-2xl border border-white/10">
           <nav className="flex flex-col items-center space-y-6">
             {navItems.map((item, index) => (
               <Link 
                 key={index} 
                 href={item.path}
-                className={`group flex flex-col items-center transition-colors ${
-                  isActive(item.path) ? 'text-white' : 'text-slate-400 hover:text-white'
+                className={`flex flex-col items-center px-4 py-3 rounded-xl transition-colors w-full ${
+                  isActive(item.path) 
+                    ? 'bg-gradient-to-b from-blue-500/20 to-blue-600/20 text-white' 
+                    : 'text-slate-300 hover:bg-white/5 hover:text-white'
                 }`}
               >
-                <span className={`p-2 rounded-xl transition-colors ${
-                  isActive(item.path) 
-                    ? 'bg-gradient-to-r from-blue-500 to-blue-600' 
-                    : 'bg-slate-800/50 group-hover:bg-blue-500/20'
-                }`}>
+                <span className="mb-1.5">
                   {item.icon}
                 </span>
-                <span className={`mt-1 text-xs font-medium ${
-                  isActive(item.path) ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'
-                } transition-opacity`}>
+                <span className="text-xs font-medium text-center">
                   {item.label}
                 </span>
               </Link>
             ))}
           </nav>
         </div>
-      </motion.div>
+      </div>
 
-      {/* Right Social Sidebar */}
-      <motion.div 
-        initial={{ x: 100, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        transition={{ duration: 0.5, delay: 0.7 }}
-        className="fixed right-6 top-1/2 -translate-y-1/2 z-50 hidden lg:block"
-      >
-        <div className="bg-slate-900/80 backdrop-blur-md rounded-2xl p-4 shadow-2xl border border-slate-700/50">
+      {/* Bottom Navbar - Mobile */}
+      <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-black/80 backdrop-blur-xl border-t border-white/10">
+        <nav className="flex justify-around py-3 px-2">
+          {navItems.map((item, index) => (
+            <Link 
+              key={index} 
+              href={item.path}
+              className={`flex flex-col items-center p-2 rounded-lg transition-colors flex-1 max-w-[20%] ${
+                isActive(item.path) 
+                  ? 'text-blue-400' 
+                  : 'text-slate-400 hover:text-white'
+              }`}
+            >
+              <span className="text-xl">
+                {item.icon}
+              </span>
+            </Link>
+          ))}
+        </nav>
+      </div>
+
+      {/* Right Social Sidebar - Desktop Only */}
+      <div className="fixed right-6 top-1/2 -translate-y-1/2 z-50 hidden lg:block">
+        <div className="backdrop-blur-xl bg-white/5 rounded-2xl p-3 shadow-2xl border border-white/10">
           <div className="flex flex-col items-center space-y-6">
             {socialItems.map((item, index) => (
               <a 
@@ -78,14 +92,14 @@ export function FloatingSidebars() {
                 href={item.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-slate-300 hover:text-blue-400 transition-colors p-2 hover:bg-slate-800/50 rounded-full"
+                className="text-slate-300 hover:text-blue-400 transition-colors p-3 hover:bg-white/5 rounded-full"
               >
                 {item.icon}
               </a>
             ))}
           </div>
         </div>
-      </motion.div>
+      </div>
     </>
   );
 }

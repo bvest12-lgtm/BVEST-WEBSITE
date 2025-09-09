@@ -28,23 +28,23 @@ export function EventDetails() {
   const features = [
     {
       icon: <FaUsers />,
-      title: "30+ Student Chapters",
-      description: "Collaborating to bring you the best technical events and workshops."
+      title: "Collaborative Events",
+      description: "BVEST unites over 30 student chapters to host diverse events, workshops, and competitions, creating a unique environment for students from different backgrounds to collaborate and share knowledge"
     },
     {
       icon: <FaHandshake />,
-      title: "Industry Partnerships",
-      description: "Connecting students with leading tech companies and professionals."
+      title: "Network & Grow",
+      description: "Our inter-chapter collaboration provides a powerful networking platform. Connect with peers, mentors, and industry experts to foster relationships that unlock new opportunities."
     },
     {
       icon: <FaLightbulb />,
-      title: "Innovation Hub",
-      description: "Fostering creativity and cutting-edge technological solutions."
+      title: "Diverse Perspectives",
+      description: "By bringing together chapters from various specializations—from tech to design and business—BVEST ensures a rich exchange of ideas crucial for developing holistic, innovative solutions."
     },
     {
       icon: <FaTrophy />,
-      title: "Competitions",
-      description: "Showcasing talent through challenging hackathons and contests."
+      title: "Skill Enhancement",
+      description: "Participate in our events to hone a wide range of skills, including project management, teamwork, and leadership, while contributing to a meaningful cause."
     }
   ];
 
@@ -57,10 +57,10 @@ export function EventDetails() {
         className="text-center mb-12"
       >
         <h2 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 mb-4">
-          Collaborative Excellence
+          Unifying Minds, Igniting Change        
         </h2>
         <p className="text-slate-300 max-w-3xl mx-auto">
-          Powered by 30+ student chapters, BVEST events bring together the brightest minds in technology.
+          BVEST events bring together the brightest minds in technology.
         </p>
       </motion.div>
 
