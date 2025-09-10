@@ -1,43 +1,5 @@
 import React from "react";
-
-interface ProblemStatementCardProps {
-  title: string;
-  description: string;
-  imageUrl: string;
-  link: string;
-}
-
-const ProblemStatementCard: React.FC<ProblemStatementCardProps> = ({
-  title,
-  description,
-  imageUrl,
-  link,
-}) => {
-  return (
-    <div
-      className=" rounded-lg  p-6 flex-shrink-0 w-80 mx-4"
-      style={{
-        boxShadow: "inset 0 0 40px rgba(56, 189, 248, 0.4)",
-      }}
-    >
-      <img
-        src={imageUrl}
-        alt={title}
-        className="w-full h-48 object-cover rounded-lg mb-4"
-      />
-      <h3 className="text-xl font-semibold mb-3 ">{title}</h3>
-      <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-        {description}
-      </p>
-      <a
-        href={link}
-        className="inline-block bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors text-sm font-medium"
-      >
-        Devfolio →
-      </a>
-    </div>
-  );
-};
+import Image from "next/image";
 
 const ProblemStatements: React.FC = () => {
   const problemStatements = [
@@ -98,6 +60,16 @@ const ProblemStatements: React.FC = () => {
               className={`${problem.theme} rounded-2xl p-0.5 backdrop-blur-sm`}
             >
               <div className="h-full bg-slate-900/80 backdrop-blur-sm rounded-2xl p-6 flex flex-col">
+                {problem.imageUrl && (
+                  <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+                    <Image
+                      src={problem.imageUrl}
+                      alt={problem.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                )}
                 <h3 className="text-xl font-bold text-white mb-3">{problem.title}</h3>
                 <p className="text-slate-300 flex-grow mb-4">{problem.description}</p>
                 <button className="mt-auto w-full py-2 px-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-lg transition-colors duration-300 border border-white/20">

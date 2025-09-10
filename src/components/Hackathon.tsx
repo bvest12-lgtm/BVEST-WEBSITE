@@ -1,7 +1,6 @@
 'use client';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import Image from 'next/image';
 
 export function Hackathon() {
   return (
@@ -83,7 +82,7 @@ EcoCode            </span>
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">24 Hours of Intense Coding</h3>
                   <p className="text-[#D1D5DB]">
-                    From ideation to implementation, you'll have 24 hours to turn your ideas into reality with mentorship from industry experts.
+                    From ideation to implementation, you&apos;ll have 24 hours to turn your ideas into reality with mentorship from industry experts.
                   </p>
                 </div>
               </div>

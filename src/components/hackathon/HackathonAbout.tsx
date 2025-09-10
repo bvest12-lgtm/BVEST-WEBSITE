@@ -31,7 +31,7 @@ export function HackathonAbout() {
               Building a Sustainable Future Through Code
             </h3>
             <p className="text-slate-300 text-lg leading-relaxed">
-            EcoCode is the premier hackathon of BVEST, a mission-driven event where top innovators tackle the planet's most urgent environmental challenges. This isn't just a competition; it's a high-energy, 24-hour sprint to build groundbreaking solutions for a sustainable future. At EcoCode, your skills meet real-world impact. You'll work on live problems, design innovative tech, and code for a cause that matters. This is where your passion for technology fuels a global change, proving that a single line of code can help build a better, greener world.
+            EcoCode is the premier hackathon of BVEST, a mission-driven event where top innovators tackle the planet&apos;s most urgent environmental challenges. This isn&apos;t just a competition; it&apos;s a high-energy, 24-hour sprint to build groundbreaking solutions for a sustainable future. At EcoCode, your skills meet real-world impact. You&apos;ll work on live problems, design innovative tech, and code for a cause that matters. This is where your passion for technology fuels a global change, proving that a single line of code can help build a better, greener world.
             </p>
             
             <div className="grid grid-cols-2 gap-4 mt-8">

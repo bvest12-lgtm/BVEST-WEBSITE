@@ -22,32 +22,63 @@ export default function Home() {
     <EventDetails key="event-details" />,
   ];
 
-  const transforms = sections.map((_, i) => {
-    const totalSections = sections.length;
-    const sectionStart = i / totalSections;
-    const sectionEnd = (i + 1) / totalSections;
-    const sectionMid = (sectionStart + sectionEnd) / 2;
+  const totalSections = sections.length;
 
-    // Window where section is fully visible (snap effect)
-    const fadeInEnd = sectionStart + (1 / totalSections) * 0.30;
-    const fadeOutStart = sectionEnd - (1 / totalSections) * 0.30;
+  // Define section start/end values
+  const sectionStart0 = 0;
+  const sectionEnd0 = 1 / totalSections;
+  const fadeInEnd0 = sectionStart0 + (1 / totalSections) * 0.3;
+  const fadeOutStart0 = sectionEnd0 - (1 / totalSections) * 0.3;
 
-    const opacity = useTransform(
-      scrollYProgress,
-      [sectionStart, fadeInEnd, fadeOutStart, sectionEnd],
-      [i === 0 ? 1 : 0, 1, 1, 0]
-    );
+  const sectionStart1 = sectionEnd0;
+  const sectionEnd1 = 2 / totalSections;
+  const fadeInEnd1 = sectionStart1 + (1 / totalSections) * 0.3;
+  const fadeOutStart1 = sectionEnd1 - (1 / totalSections) * 0.3;
 
-    const x = useTransform(
-      scrollYProgress,
-      [sectionStart, fadeInEnd, fadeOutStart, sectionEnd],
-      [i === 0 ? "0%" : "50%", "0%", "0%", "-50%"]
-    );
+  const sectionStart2 = sectionEnd1;
+  const sectionEnd2 = 1;
+  const fadeInEnd2 = sectionStart2 + (1 / totalSections) * 0.3;
+  const fadeOutStart2 = sectionEnd2 - (1 / totalSections) * 0.3;
 
-    const zIndex = sections.length - i;
+  // Define transforms at top level for each section
+  const opacity0 = useTransform(
+    scrollYProgress,
+    [sectionStart0, fadeInEnd0, fadeOutStart0, sectionEnd0],
+    [1, 1, 0, 0]
+  );
+  const x0 = useTransform(
+    scrollYProgress,
+    [sectionStart0, fadeInEnd0, fadeOutStart0, sectionEnd0],
+    ["0%", "0%", "-50%", "-50%"]
+  );
 
-    return { opacity, x, zIndex };
-  });
+  const opacity1 = useTransform(
+    scrollYProgress,
+    [sectionStart1, fadeInEnd1, fadeOutStart1, sectionEnd1],
+    [0, 1, 1, 0]
+  );
+  const x1 = useTransform(
+    scrollYProgress,
+    [sectionStart1, fadeInEnd1, fadeOutStart1, sectionEnd1],
+    ["50%", "0%", "0%", "-50%"]
+  );
+
+  const opacity2 = useTransform(
+    scrollYProgress,
+    [sectionStart2, fadeInEnd2, fadeOutStart2, sectionEnd2],
+    [0, 1, 1, 0]
+  );
+  const x2 = useTransform(
+    scrollYProgress,
+    [sectionStart2, fadeInEnd2, fadeOutStart2, sectionEnd2],
+    ["50%", "0%", "0%", "-50%"]
+  );
+
+  const transforms = [
+    { opacity: opacity0, x: x0, zIndex: 3 },
+    { opacity: opacity1, x: x1, zIndex: 2 },
+    { opacity: opacity2, x: x2, zIndex: 1 },
+  ];
 
   return (
     <div ref={containerRef} className="relative">
@@ -74,9 +105,7 @@ export default function Home() {
                 pointerEvents: "none",
               }}
             >
-              <div className="w-full max-w-6xl pointer-events-auto">
-                {section}
-              </div>
+              <div className="w-full max-w-6xl pointer-events-auto">{section}</div>
             </motion.div>
           ))}
         </div>

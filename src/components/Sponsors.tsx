@@ -86,7 +86,7 @@ export function Sponsors() {
           Our Sponsors & Partners
         </h2>
         <p className="text-slate-300 max-w-3xl mx-auto text-lg">
-          We're grateful to our amazing sponsors and partners who make this event possible
+          We&apos;re grateful to our amazing sponsors and partners who make this event possible
         </p>
       </motion.div>
 

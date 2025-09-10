@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, ReactNode } from 'react';
+import { useState, ReactNode } from 'react';
 import Preloader from './Preloader';
 
 export default function PreloaderWrapper({ children }: { children: ReactNode }) {

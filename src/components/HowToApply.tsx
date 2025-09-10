@@ -36,7 +36,7 @@ const HowToApply = () => {
             </div>
             <h3 className="text-lg font-semibold mb-2">Apply Now</h3>
             <p className="text-neutral-400">
-              Click the "Apply Now" button and fill out the application form
+              Click the &quot;Apply Now&quot; button and fill out the application form
             </p>
           </div>
 
