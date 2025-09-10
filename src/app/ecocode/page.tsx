@@ -4,7 +4,6 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { HackathonLanding } from "@/components/hackathon/HackathonLanding";
 import { HackathonAbout } from "@/components/hackathon/HackathonAbout";
-import { HackathonGuests } from "@/components/hackathon/HackathonGuests";
 import Timeline from "@/components/Timeline";
 import HowToApply from "@/components/HowToApply";
 import ProblemStatements from "@/components/ProblemStatements";
@@ -24,28 +23,71 @@ export default function EcoCodePage() {
     <Timeline key="timeline" />,
   ];
 
-  const transforms = sections.map((_, i) => {
-    const totalSections = sections.length;
-    const sectionStart = i / totalSections;
-    const sectionEnd = (i + 1) / totalSections;
+  const totalSections = sections.length;
 
-    const fadeInEnd = sectionStart + (1 / totalSections) * 0.3;
-    const fadeOutStart = sectionEnd - (1 / totalSections) * 0.3;
+  // Define transforms explicitly at the top level
+  const opacity0 = useTransform(
+    scrollYProgress,
+    [0, 0.06, 0.14, 0.2],
+    [1, 1, 0, 0]
+  );
+  const x0 = useTransform(
+    scrollYProgress,
+    [0, 0.06, 0.14, 0.2],
+    ["0%", "0%", "-50%", "-50%"]
+  );
 
-    const opacity = useTransform(
-      scrollYProgress,
-      [sectionStart, fadeInEnd, fadeOutStart, sectionEnd],
-      [i === 0 ? 1 : 0, 1, 1, 0]
-    );
+  const opacity1 = useTransform(
+    scrollYProgress,
+    [0.2, 0.26, 0.34, 0.4],
+    [0, 1, 1, 0]
+  );
+  const x1 = useTransform(
+    scrollYProgress,
+    [0.2, 0.26, 0.34, 0.4],
+    ["50%", "0%", "0%", "-50%"]
+  );
 
-    const x = useTransform(
-      scrollYProgress,
-      [sectionStart, fadeInEnd, fadeOutStart, sectionEnd],
-      [i === 0 ? "0%" : "50%", "0%", "0%", "-50%"]
-    );
+  const opacity2 = useTransform(
+    scrollYProgress,
+    [0.4, 0.46, 0.54, 0.6],
+    [0, 1, 1, 0]
+  );
+  const x2 = useTransform(
+    scrollYProgress,
+    [0.4, 0.46, 0.54, 0.6],
+    ["50%", "0%", "0%", "-50%"]
+  );
 
-    return { opacity, x };
-  });
+  const opacity3 = useTransform(
+    scrollYProgress,
+    [0.6, 0.66, 0.74, 0.8],
+    [0, 1, 1, 0]
+  );
+  const x3 = useTransform(
+    scrollYProgress,
+    [0.6, 0.66, 0.74, 0.8],
+    ["50%", "0%", "0%", "-50%"]
+  );
+
+  const opacity4 = useTransform(
+    scrollYProgress,
+    [0.8, 0.86, 0.94, 1],
+    [0, 1, 1, 0]
+  );
+  const x4 = useTransform(
+    scrollYProgress,
+    [0.8, 0.86, 0.94, 1],
+    ["50%", "0%", "0%", "-50%"]
+  );
+
+  const transforms = [
+    { opacity: opacity0, x: x0 },
+    { opacity: opacity1, x: x1 },
+    { opacity: opacity2, x: x2 },
+    { opacity: opacity3, x: x3 },
+    { opacity: opacity4, x: x4 },
+  ];
 
   return (
     <div ref={containerRef} className="relative w-full">

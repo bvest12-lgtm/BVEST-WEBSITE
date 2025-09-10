@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { FaHome, FaLaptopCode, FaCalendarAlt, FaUsers, FaHandshake } from "react-icons/fa";
