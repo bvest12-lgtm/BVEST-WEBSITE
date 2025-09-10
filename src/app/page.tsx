@@ -24,40 +24,21 @@ export default function Home() {
 
   const totalSections = sections.length;
 
-<<<<<<< HEAD
-    // Window where section is fully visible (snap effect)
-    const fadeInEnd = sectionStart + (1 / totalSections) * 0.3;
-    const fadeOutStart = sectionEnd - (1 / totalSections) * 0.3;
-=======
   // Define section start/end values
   const sectionStart0 = 0;
   const sectionEnd0 = 1 / totalSections;
   const fadeInEnd0 = sectionStart0 + (1 / totalSections) * 0.3;
   const fadeOutStart0 = sectionEnd0 - (1 / totalSections) * 0.3;
->>>>>>> 1cae407a820a7d22c9aeba192c62992847617c92
 
   const sectionStart1 = sectionEnd0;
   const sectionEnd1 = 2 / totalSections;
   const fadeInEnd1 = sectionStart1 + (1 / totalSections) * 0.3;
   const fadeOutStart1 = sectionEnd1 - (1 / totalSections) * 0.3;
 
-<<<<<<< HEAD
-    const x = useTransform(
-      scrollYProgress,
-      [sectionStart, fadeInEnd, fadeOutStart, sectionEnd],
-      [
-        i === 0 ? "0%" : "50%",
-        "0%",
-        "0%",
-        i === totalSections - 1 ? "0%" : "-50%",
-      ]
-    );
-=======
   const sectionStart2 = sectionEnd1;
-  const sectionEnd2 = 1;
+  const sectionEnd2 = 3 / totalSections;
   const fadeInEnd2 = sectionStart2 + (1 / totalSections) * 0.3;
   const fadeOutStart2 = sectionEnd2 - (1 / totalSections) * 0.3;
->>>>>>> 1cae407a820a7d22c9aeba192c62992847617c92
 
   // Define transforms at top level for each section
   const opacity0 = useTransform(
@@ -124,7 +105,9 @@ export default function Home() {
                 pointerEvents: "none",
               }}
             >
-              <div className="w-full max-w-6xl pointer-events-auto">{section}</div>
+              <div className="w-full max-w-6xl pointer-events-auto">
+                {section}
+              </div>
             </motion.div>
           ))}
         </div>
