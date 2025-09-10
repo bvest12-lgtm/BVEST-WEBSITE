@@ -48,9 +48,9 @@ export default function EcoCodePage() {
   });
 
   return (
-    <div ref={containerRef} className="relative bg-transparent">
-      <div className="relative h-[600vh] bg-transparent">
-        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden bg-transparent">
+    <div ref={containerRef} className="relative w-full">
+      <div className="relative h-[600vh] w-full">
+        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden ">
           {sections.map((section, i) => (
             <motion.div
               key={i}
@@ -69,12 +69,10 @@ export default function EcoCodePage() {
                 justifyContent: "center",
                 padding: "0 1rem",
                 pointerEvents: i === 0 ? "auto" : "none",
-                background: 'transparent',
+                background: "transparent",
               }}
             >
-              <div className="w-full max-w-6xl bg-transparent">
-                {section}
-              </div>
+              <div className="w-full max-w-6xl bg-transparent">{section}</div>
             </motion.div>
           ))}
         </div>

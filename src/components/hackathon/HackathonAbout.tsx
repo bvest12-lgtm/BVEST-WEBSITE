@@ -1,6 +1,11 @@
 "use client";
-
+import { Space_Grotesk } from "next/font/google";
 import { motion } from "framer-motion";
+
+const spaceGrotesk = Space_Grotesk({
+  weight: ["400", "600"],
+  subsets: ["latin"],
+});
 
 export function HackathonAbout() {
   return (
@@ -13,7 +18,9 @@ export function HackathonAbout() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 mb-6">
+          <h2
+            className={`text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 mb-6 ${spaceGrotesk.className}`}
+          >
             About EcoCode
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-blue-500 mx-auto mb-6"></div>
@@ -31,9 +38,17 @@ export function HackathonAbout() {
               Building a Sustainable Future Through Code
             </h3>
             <p className="text-slate-300 text-lg leading-relaxed">
-            EcoCode is the premier hackathon of BVEST, a mission-driven event where top innovators tackle the planet's most urgent environmental challenges. This isn't just a competition; it's a high-energy, 24-hour sprint to build groundbreaking solutions for a sustainable future. At EcoCode, your skills meet real-world impact. You'll work on live problems, design innovative tech, and code for a cause that matters. This is where your passion for technology fuels a global change, proving that a single line of code can help build a better, greener world.
+              EcoCode is the premier hackathon of BVEST, a mission-driven event
+              where top innovators tackle the planet's most urgent environmental
+              challenges. This isn't just a competition; it's a high-energy,
+              24-hour sprint to build groundbreaking solutions for a sustainable
+              future. At EcoCode, your skills meet real-world impact. You'll
+              work on live problems, design innovative tech, and code for a
+              cause that matters. This is where your passion for technology
+              fuels a global change, proving that a single line of code can help
+              build a better, greener world.
             </p>
-            
+
             <div className="grid grid-cols-2 gap-4 mt-8">
               <StatCard number="24" label="Hours" />
               <StatCard number="300+" label="RegistrationsS" />
@@ -49,7 +64,9 @@ export function HackathonAbout() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-slate-800/50 backdrop-blur-sm p-8 rounded-2xl border border-slate-700/50"
           >
-            <h3 className="text-xl font-semibold text-slate-100 mb-6">Tracks & Themes</h3>
+            <h3 className="text-xl font-semibold text-slate-100 mb-6">
+              Tracks & Themes
+            </h3>
             <div className="space-y-4">
               {[
                 { title: "Energy Conservation & Efficiency", icon: "⚡" },
@@ -59,7 +76,10 @@ export function HackathonAbout() {
                 { title: "Water Conservation", icon: "💧" },
                 { title: "Environmental Policy & Governance", icon: "🏙️" },
               ].map((track, index) => (
-                <div key={index} className="flex items-center space-x-4 p-3 bg-slate-800/30 rounded-lg hover:bg-slate-700/50 transition-colors">
+                <div
+                  key={index}
+                  className="flex items-center space-x-4 p-3 bg-slate-800/30 rounded-lg hover:bg-slate-700/50 transition-colors"
+                >
                   <span className="text-2xl">{track.icon}</span>
                   <span className="text-slate-200">{track.title}</span>
                 </div>

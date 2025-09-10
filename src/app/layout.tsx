@@ -29,11 +29,18 @@ const raleway = Raleway({
 export const metadata: Metadata = {
   title: "BVEST 12 | Greenovate",
   description: "BVEST - The Technical Fest of BVCOE | 8-9 October 2025",
-  keywords: ["BVEST", "Hackathon", "Technical Fest", "Greenovate", "Technology", "Sustainability"],
-  themeColor: "#000000",
+  keywords: [
+    "BVEST",
+    "Hackathon",
+    "Technical Fest",
+    "Greenovate",
+    "Technology",
+    "Sustainability",
+  ],
+
   icons: {
-    icon: '/logo.png',
-    apple: '/logo.png',
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
 };
 
@@ -43,10 +50,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${poppins.variable} ${raleway.variable} scroll-smooth`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${poppins.variable} ${raleway.variable} scroll-smooth`}
+    >
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&family=Raleway:wght@400;500;600&display=swap"
           rel="stylesheet"

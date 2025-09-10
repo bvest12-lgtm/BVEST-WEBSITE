@@ -29,8 +29,8 @@ export default function Home() {
     const sectionMid = (sectionStart + sectionEnd) / 2;
 
     // Window where section is fully visible (snap effect)
-    const fadeInEnd = sectionStart + (1 / totalSections) * 0.30;
-    const fadeOutStart = sectionEnd - (1 / totalSections) * 0.30;
+    const fadeInEnd = sectionStart + (1 / totalSections) * 0.3;
+    const fadeOutStart = sectionEnd - (1 / totalSections) * 0.3;
 
     const opacity = useTransform(
       scrollYProgress,
@@ -41,7 +41,12 @@ export default function Home() {
     const x = useTransform(
       scrollYProgress,
       [sectionStart, fadeInEnd, fadeOutStart, sectionEnd],
-      [i === 0 ? "0%" : "50%", "0%", "0%", "-50%"]
+      [
+        i === 0 ? "0%" : "50%",
+        "0%",
+        "0%",
+        i === totalSections - 1 ? "0%" : "-50%",
+      ]
     );
 
     const zIndex = sections.length - i;
@@ -53,8 +58,8 @@ export default function Home() {
     <div ref={containerRef} className="relative">
       <AnimatedBackground />
 
-      <div className="relative h-[700vh]">
-        <div className="sticky top-0 h-screen flex items-center justify-center overflow-hidden">
+      <div className="relative h-[300vh]">
+        <div className="sticky top-0 h-[100vh] flex items-center justify-center overflow-hidden">
           {sections.map((section, i) => (
             <motion.div
               key={i}

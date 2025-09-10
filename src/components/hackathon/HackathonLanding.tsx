@@ -1,43 +1,52 @@
 "use client";
-
+import { Space_Grotesk } from "next/font/google";
 import { motion } from "framer-motion";
-import { FaTrophy, FaCalendarAlt, FaMapMarkerAlt, FaArrowRight } from "react-icons/fa";
+import {
+  FaTrophy,
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaArrowRight,
+} from "react-icons/fa";
 import { FaUsers } from "@/components/ui/Icons";
+
+const spaceGrotesk = Space_Grotesk({
+  weight: ["400", "600"],
+  subsets: ["latin"],
+});
 
 export function HackathonLanding() {
   return (
-    <section className="relative overflow-hidden py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-transparent">
-
-      <div className="max-w-7xl mx-auto relative bg-transparent">
+    <section className="relative  overflow-hidden py-20 md:py-32 px-4 sm:px-6 lg:px-8 ">
+      <div className="max-w-7xl mx-auto relative ">
         {/* Hero content */}
-        <div className="text-center mb-20 bg-transparent">
+        <div className="text-center mb-20 ">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="inline-block px-4 py-2 mb-6 rounded-full backdrop-blur-sm text-blue-300 text-sm font-medium"
+            className={`inline-block  px-4 py-2 mb-2 rounded-full backdrop-blur-sm text-blue-300 text-2xl font-medium ${spaceGrotesk.className}`}
           >
             BVEST 12 Presents
           </motion.div>
-          
+
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1 }}
-            className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-blue-400 to-purple-500"
+            className={`text-5xl sm:text-6xl md:text-7xl font-bold mb-1 bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-blue-400 to-purple-500 leading-tight ${spaceGrotesk.className}`}
           >
             EcoCode 2025
           </motion.h1>
-          
+
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-10"
+            className={`text-lg md:text-xl text-slate-300 max-w-3xl mx-auto mb-8 ${spaceGrotesk.className}`}
           >
             Where Innovation Fuels Sustainability
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,25 +77,25 @@ export function HackathonLanding() {
           transition={{ duration: 0.8 }}
           className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto"
         >
-          <StatCard 
+          <StatCard
             icon={<FaTrophy className="w-6 h-6" />}
             value="-"
             label="In Prizes"
             color="from-yellow-400 to-yellow-600"
           />
-          <StatCard 
+          <StatCard
             icon={<FaCalendarAlt className="w-6 h-6" />}
             value="24 Hours"
             label="Of Hacking"
             color="from-blue-400 to-blue-600"
           />
-          <StatCard 
+          <StatCard
             icon={<FaUsers className="w-6 h-6" />}
             value="200+"
             label="Participants"
             color="from-green-400 to-green-600"
           />
-          <StatCard 
+          <StatCard
             icon={<FaMapMarkerAlt className="w-6 h-6" />}
             value="Offline"
             label="Live & In-Action"
@@ -102,13 +111,27 @@ export function HackathonLanding() {
   );
 }
 
-function StatCard({ icon, value, label, color }: { icon: React.ReactNode; value: string; label: string; color: string }) {
+function StatCard({
+  icon,
+  value,
+  label,
+  color,
+}: {
+  icon: React.ReactNode;
+  value: string;
+  label: string;
+  color: string;
+}) {
   return (
     <div className="backdrop-blur-xl bg-white/5 p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 hover:-translate-y-1">
-      <div className={`w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto bg-gradient-to-r ${color} text-white`}>
+      <div
+        className={`w-12 h-12 rounded-full flex items-center justify-center mb-3 mx-auto bg-gradient-to-r ${color} text-white`}
+      >
         {icon}
       </div>
-      <div className="text-2xl font-bold text-center mb-1 text-white">{value}</div>
+      <div className="text-2xl font-bold text-center mb-1 text-white">
+        {value}
+      </div>
       <div className="text-white/70 text-sm text-center">{label}</div>
     </div>
   );
