@@ -54,18 +54,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${poppins.variable} ${raleway.variable} scroll-smooth`}
     >
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700;800&family=Raleway:wght@400;500;600&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+      {/* Custom font links removed. Use next/font or import in global CSS for app router. */}
       <body className="bg-black text-gray-100 antialiased overflow-x-hidden">
         <PreloaderWrapper>
           <FloatingSidebars />

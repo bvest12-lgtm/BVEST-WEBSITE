@@ -23,8 +23,6 @@ export default function EcoCodePage() {
     <Timeline key="timeline" />,
   ];
 
-  const totalSections = sections.length;
-
   // Define transforms explicitly at the top level
   const opacity0 = useTransform(
     scrollYProgress,

@@ -5,7 +5,7 @@ import { Berkshire_Swash } from "next/font/google";
 import { BiRightArrow } from "react-icons/bi";
 import Image from "next/image";
 
-const berkshireSwash = Berkshire_Swash({ weight: ["400"], subsets: ["latin"] });
+// ...existing code...
 const spaceGrotesk = Space_Grotesk({
   weight: ["400", "600"],
   subsets: ["latin"],

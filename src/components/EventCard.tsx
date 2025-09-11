@@ -15,12 +15,13 @@ export function EventCard({
   description,
   imageUrl,
   redirectUrl,
-  collaboratingSocieties = ['EduMinerva', 'ISTE'],
+  collaboratingSocieties = ["EduMinerva", "ISTE"],
 }: EventCardProps) {
   // Default image and redirect URL
-  const defaultImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRszylXBlV5rwf2CFoTh6oZbOFZxWtsfIOd4A&s";
+  const defaultImage =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRszylXBlV5rwf2CFoTh6oZbOFZxWtsfIOd4A&s";
   const defaultRedirect = "#";
-  
+
   // Use the provided image or default to the BVEST poster
   const eventImage = imageUrl || defaultImage;
 
@@ -41,8 +42,8 @@ export function EventCard({
       {/* Image container */}
       <div className="relative h-48 overflow-hidden">
         <Image
+          alt="event image"
           src={eventImage}
-          alt={title}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-110"
           onError={(e) => {
@@ -54,7 +55,9 @@ export function EventCard({
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
         {/* Event title overlay */}
         <div className="absolute bottom-0 left-0 right-0 p-4">
-          <h3 className="text-xl font-bold text-white drop-shadow-md">{title}</h3>
+          <h3 className="text-xl font-bold text-white drop-shadow-md">
+            {title}
+          </h3>
         </div>
       </div>
 
@@ -67,10 +70,12 @@ export function EventCard({
 
         {/* Collaborating Societies */}
         <div className="mb-4">
-          <p className="text-xs text-[#9CA3AF] mb-2">Collaborating Societies:</p>
+          <p className="text-xs text-[#9CA3AF] mb-2">
+            Collaborating Societies:
+          </p>
           <div className="flex flex-wrap gap-2">
             {collaboratingSocieties.map((society, index) => (
-              <span 
+              <span
                 key={index}
                 className="px-3 py-1 text-xs font-medium rounded-full bg-[#1F2937] text-[#E5E7EB] border border-[#374151]"
               >
@@ -80,13 +85,12 @@ export function EventCard({
           </div>
         </div>
 
-
         {/* Button */}
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={() => {
-            if (redirectUrl && redirectUrl !== '#') {
+            if (redirectUrl && redirectUrl !== "#") {
               window.open(redirectUrl, "_blank");
             }
           }}
@@ -122,49 +126,55 @@ export function EventCardGrid() {
       title: "Tech Innovation Summit",
       description:
         "Join industry leaders and innovators for a day of cutting-edge technology discussions, workshops, and networking opportunities.",
-      imageUrl: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       redirectUrl: "https://example.com/tech-summit",
-      collaboratingSocieties: ["EduMinerva", "ISTE"]
+      collaboratingSocieties: ["EduMinerva", "ISTE"],
     },
     {
       title: "Startup Pitch Competition",
       description:
         "Watch promising startups pitch their innovative ideas to a panel of investors and industry experts.",
-      imageUrl: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       redirectUrl: "https://example.com/startup-pitch",
-      collaboratingSocieties: ["EduMinerva", "ISTE"]
+      collaboratingSocieties: ["EduMinerva", "ISTE"],
     },
     {
       title: "AI & Machine Learning Workshop",
       description:
         "Hands-on workshop covering the latest developments in artificial intelligence and machine learning technologies.",
-      imageUrl: "https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1408&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1408&q=80",
       redirectUrl: "https://example.com/ai-workshop",
-      collaboratingSocieties: ["EduMinerva", "ISTE"]
+      collaboratingSocieties: ["EduMinerva", "ISTE"],
     },
     {
       title: "Blockchain Revolution",
       description:
         "Explore the future of decentralized technologies and their impact on various industries.",
-      imageUrl: "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
       redirectUrl: "https://example.com/blockchain",
-      collaboratingSocieties: ["EduMinerva", "ISTE"]
+      collaboratingSocieties: ["EduMinerva", "ISTE"],
     },
     {
       title: "Cybersecurity Symposium",
       description:
         "Learn about the latest threats and defense mechanisms in the ever-evolving cybersecurity landscape.",
-      imageUrl: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       redirectUrl: "https://example.com/cyber-symposium",
-      collaboratingSocieties: ["EduMinerva", "ISTE"]
+      collaboratingSocieties: ["EduMinerva", "ISTE"],
     },
     {
       title: "Future of Web Development",
       description:
         "Discover the latest trends, frameworks, and best practices in modern web development.",
-      imageUrl: "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80",
+      imageUrl:
+        "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80",
       redirectUrl: "https://example.com/web-dev-future",
-      collaboratingSocieties: ["EduMinerva", "ISTE"]
+      collaboratingSocieties: ["EduMinerva", "ISTE"],
     },
   ];
 

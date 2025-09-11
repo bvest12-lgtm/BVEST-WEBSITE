@@ -121,9 +121,9 @@ export function Hackathon() {
                         24 Hours of Intense Coding
                       </h3>
                       <p className="text-[#D1D5DB]">
-                        From ideation to implementation, you'll have 24 hours to
-                        turn your ideas into reality with mentorship from
-                        industry experts.
+                        From ideation to implementation, you&apos;ll have 24
+                        hours to turn your ideas into reality with mentorship
+                        from industry experts.
                       </p>
                     </div>
                   </div>

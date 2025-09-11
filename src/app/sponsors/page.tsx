@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useScroll } from "framer-motion";
 import { useRef } from "react";
 import { Sponsors } from "@/components/Sponsors";
 
@@ -12,7 +12,10 @@ export default function SponsorsPage() {
   });
 
   return (
-    <div ref={containerRef} className="min-h-screen flex items-center justify-center py-20">
+    <div
+      ref={containerRef}
+      className="min-h-screen flex items-center justify-center py-20"
+    >
       <div className="w-full max-w-6xl px-4">
         <Sponsors />
       </div>
