@@ -15,7 +15,7 @@ const Timeline = () => {
               Timeline Coming Soon
             </p>
             <p className="mt-2 text-blue-200">
-              We're working on something amazing. Stay tuned!
+              We&apos;re working on something amazing. Stay tuned!
             </p>
           </div>
         </div>
