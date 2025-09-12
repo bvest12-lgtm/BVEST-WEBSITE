@@ -78,53 +78,47 @@ const ProblemStatementCard: React.FC<ProblemStatementCardProps> = ({
 const ProblemStatements: React.FC = () => {
   const problemStatements = [
     {
-      title: "Sustainable Energy Solutions",
-      description:
-        "Innovate in renewable energy technologies, energy storage, and smart grid solutions to accelerate the transition to clean energy.",
-      theme: "bg-gradient-to-br from-[#36D399] to-[#10B981]",
-      icon: "⚡",
-    },
-    {
-      title: "Climate Smart Agriculture",
-      description:
-        "Develop technologies for precision farming, crop monitoring, and sustainable food production to combat food insecurity.",
-      theme: "bg-gradient-to-br from-[#F59E0B] to-[#D97706]",
-      icon: "🌱",
-    },
-    {
-      title: "Circular Economy",
-      description:
-        "Create solutions for waste reduction, recycling automation, and sustainable product lifecycle management.",
-      theme: "bg-gradient-to-br from-[#38BDF8] to-[#3B82F6]",
-      icon: "♻️",
-    },
-    {
-      title: "Smart Cities & Infrastructure",
-      description:
-        "Design intelligent urban solutions for energy efficiency, waste management, and sustainable transportation.",
-      theme: "bg-gradient-to-br from-[#A855F7] to-[#9333EA]",
-      icon: "🏙️",
-    },
-    {
-      title: "Biodiversity & Conservation",
-      description:
-        "Develop tools for wildlife protection, habitat restoration, and ecosystem monitoring using technology.",
-      theme: "bg-gradient-to-br from-[#14B8A6] to-[#06B6D4]",
-      icon: "🦋",
-    },
-    {
-      title: "Water Resource Management",
-      description:
-        "Innovate in water conservation, purification, and distribution systems for sustainable water use.",
-      theme: "bg-gradient-to-br from-[#0EA5E9] to-[#2563EB]",
-      icon: "💧",
-    },
+    title: "Waste Management & Circular Economy",
+    description: "Reduce landfill pressure and promote a circular economy by encouraging sustainable consumption, efficient waste segregation, recycling, and reuse in urban environments like Delhi.",
+    theme: "bg-gradient-to-br from-[#38BDF8] to-[#3B82F6]",
+    icon: "♻️"
+  },
+  {
+    title: "Energy Conservation & Efficiency",
+    description: "Address rising energy demand by optimizing consumption, integrating renewable sources, and promoting behavioral changes to reduce wastage in households, offices, and grids.",
+    theme: "bg-gradient-to-br from-[#36D399] to-[#10B981]",
+    icon: "⚡"
+  },
+  {
+    title: "Water Conservation",
+    description: "Tackle urban water scarcity by tracking consumption, detecting leaks, improving wastewater recycling, and educating citizens for sustainable water use and distribution.",
+    theme: "bg-gradient-to-br from-[#0EA5E9] to-[#2563EB]",
+    icon: "💧"
+  },
+  {
+    title: "Sustainable Agriculture & Food Systems",
+    description: "Promote eco-friendly farming and food security by enhancing supply chains, diagnostics, inventory management, and localized production through data-driven solutions.",
+    theme: "bg-gradient-to-br from-[#F59E0B] to-[#D97706]",
+    icon: "🌱"
+  },
+  {
+    title: "Environmental Awareness & Education",
+    description: "Empower individuals and communities with knowledge and tools to adopt sustainable behaviors through interactive learning, gamified platforms, and awareness campaigns.",
+    theme: "bg-gradient-to-br from-[#A855F7] to-[#9333EA]",
+    icon: "🏙️"
+  },
+  {
+    title: "Environmental Policy & Governance",
+    description: "Strengthen environmental policies through data-driven tools for compliance tracking, transparent reporting, citizen feedback, and informed decision-making.",
+    theme: "bg-gradient-to-br from-[#14B8A6] to-[#06B6D4]",
+    icon: "🦋"
+  }    
   ];
 
   return (
     <section className="py-8 px-6 lg:px-8 relative overflow-hidden min-h-screen flex flex-col">
       {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#111827] via-[#1F2937] to-[#111827] opacity-50"></div>
+      <div className="absolute inset-0"></div>
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute top-1/4 -left-4 w-96 h-96 bg-[#36D399] rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-pulse"></div>
         <div className="absolute bottom-1/4 -right-4 w-96 h-96 bg-[#38BDF8] rounded-full mix-blend-multiply filter blur-xl opacity-5 animate-pulse delay-1000"></div>

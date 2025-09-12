@@ -22,11 +22,15 @@ const FeatureCard = ({ icon, title, description, delay }: FeatureCardProps) => (
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true }}
     transition={{ duration: 0.5, delay: delay * 0.1 }}
-    className="bg-slate-900/50 backdrop-blur-sm p-6 rounded-2xl border border-slate-600 hover:border-blue-500/75 transition-all duration-300"
+    className="bg-gradient-to-br from-slate-900/80 to-slate-800/50 backdrop-blur-md p-6 rounded-2xl border border-slate-700/50 hover:border-blue-400/50 transition-all duration-300 hover:shadow-xl hover:shadow-blue-500/10 h-full flex flex-col"
   >
-    <div className="text-blue-400 text-3xl mb-4">{icon}</div>
-    <h3 className="text-xl font-semibold text-white mb-2">{title}</h3>
-    <p className="text-slate-300">{description}</p>
+    <div className="w-12 h-12 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-400 text-2xl mb-4">
+      {icon}
+    </div>
+    <h3 className="text-xl font-bold text-white mb-3 bg-gradient-to-r from-blue-400 to-green-400 bg-clip-text text-transparent">
+      {title}
+    </h3>
+    <p className="text-slate-300/90 text-sm leading-relaxed">{description}</p>
   </motion.div>
 );
 
@@ -59,24 +63,24 @@ export function EventDetails() {
   ];
 
   return (
-    <section className="pt-16 h-screen flex flex-col justify-center px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-center "
+        className="text-center mb-16"
       >
         <h2
-          className={`text-3xl  md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 mb-10 leading-normal ${spaceGrotesk.className}`}
+          className={`text-4xl sm:text-5xl md:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 via-blue-400 to-purple-500 mb-6 leading-tight ${spaceGrotesk.className}`}
         >
           Unifying Minds, Igniting Change
         </h2>
-        <p className="text-slate-300 max-w-3xl mx-auto text-sm mb-4">
+        <p className="text-slate-300 max-w-3xl mx-auto text-lg">
           BVEST events bring together the brightest minds in technology.
         </p>
       </motion.div>
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {features.map((feature, index) => (
           <FeatureCard
             key={index}

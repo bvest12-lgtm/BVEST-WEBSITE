@@ -129,7 +129,7 @@ export function EventCardGrid() {
       imageUrl:
         "https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       redirectUrl: "https://example.com/tech-summit",
-      collaboratingSocieties: ["EduMinerva", "ISTE"],
+      collaboratingSocieties: ["Society 1", "Society 2"],
     },
     {
       title: "Startup Pitch Competition",
@@ -138,7 +138,7 @@ export function EventCardGrid() {
       imageUrl:
         "https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       redirectUrl: "https://example.com/startup-pitch",
-      collaboratingSocieties: ["EduMinerva", "ISTE"],
+      collaboratingSocieties: ["Society 1", "Society 2"],
     },
     {
       title: "AI & Machine Learning Workshop",
@@ -147,7 +147,7 @@ export function EventCardGrid() {
       imageUrl:
         "https://images.unsplash.com/photo-1535378917042-10a22c95931a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1408&q=80",
       redirectUrl: "https://example.com/ai-workshop",
-      collaboratingSocieties: ["EduMinerva", "ISTE"],
+      collaboratingSocieties: ["Society 1", "Society 2"],
     },
     {
       title: "Blockchain Revolution",
@@ -156,7 +156,7 @@ export function EventCardGrid() {
       imageUrl:
         "https://images.unsplash.com/photo-1620641788421-7a1c342ea42e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80",
       redirectUrl: "https://example.com/blockchain",
-      collaboratingSocieties: ["EduMinerva", "ISTE"],
+      collaboratingSocieties: ["Society 1", "Society 2"],
     },
     {
       title: "Cybersecurity Symposium",
@@ -165,7 +165,7 @@ export function EventCardGrid() {
       imageUrl:
         "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
       redirectUrl: "https://example.com/cyber-symposium",
-      collaboratingSocieties: ["EduMinerva", "ISTE"],
+      collaboratingSocieties: ["Society 1", "Society 2"],
     },
     {
       title: "Future of Web Development",
@@ -174,7 +174,7 @@ export function EventCardGrid() {
       imageUrl:
         "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1528&q=80",
       redirectUrl: "https://example.com/web-dev-future",
-      collaboratingSocieties: ["EduMinerva", "ISTE"],
+      collaboratingSocieties: ["Society 1", "Society 2"],
     },
   ];
 
