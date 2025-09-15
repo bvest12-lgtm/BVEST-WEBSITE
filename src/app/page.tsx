@@ -5,6 +5,7 @@ import { Hackathon } from "@/components/Hackathon";
 import { AnimatedBackground } from "@/components/AnimatedBackground";
 import { EventDetails } from "@/components/events/EventDetails";
 import { ContactUs } from "@/components/ContactUs";
+import { Sponsors } from "@/components/Sponsors";
 
 export default function Home() {
   return (
@@ -27,6 +28,12 @@ export default function Home() {
         <section className="min-h-screen flex items-center justify-center p-4">
           <div className="w-full max-w-6xl">
             <EventDetails />
+          </div>
+        </section>
+
+        <section className="min-h-screen flex items-center justify-center p-4">
+          <div className="w-full max-w-6xl">
+            <Sponsors />
           </div>
         </section>
 
