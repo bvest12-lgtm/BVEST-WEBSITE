@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Space_Grotesk } from "next/font/google";
 import Image from "next/image";
+import { useEffect } from 'react';
 
 const spaceGrotesk = Space_Grotesk({
   weight: ["400", "600"],
@@ -10,6 +11,16 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export function Hackathon() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
   const features = [
     {
       title: "Challenges",
@@ -111,11 +122,18 @@ export function Hackathon() {
 
             {/* Buttons */}
             <div className="mt-12 text-center">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="group relative px-8 py-3.5 bg-gradient-to-r from-[#36D399] to-[#38BDF8] text-black font-bold rounded-full overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#36D399]/30">
-                  <span className="relative z-10">Register Now</span>
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#38BDF8] to-[#2563EB] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                </button>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <div 
+                  className="apply-button" 
+                  data-hackathon-slug="ecocode" 
+                  data-button-theme="light"
+                  style={{ 
+                    height: '44px', 
+                    width: '312px',
+                    borderRadius: '9999px',
+                    overflow: 'hidden'
+                  }}
+                ></div>
 
                 <Link
                   href="/ecocode"
