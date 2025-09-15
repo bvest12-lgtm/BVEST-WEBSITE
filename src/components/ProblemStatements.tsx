@@ -78,41 +78,41 @@ const ProblemStatementCard: React.FC<ProblemStatementCardProps> = ({
 const ProblemStatements: React.FC = () => {
   const problemStatements = [
     {
-    title: "Waste Management & Circular Economy",
-    description: "Reduce landfill pressure and promote a circular economy by encouraging sustainable consumption, efficient waste segregation, recycling, and reuse in urban environments like Delhi.",
-    theme: "bg-gradient-to-br from-[#38BDF8] to-[#3B82F6]",
-    icon: "♻️"
-  },
-  {
-    title: "Energy Conservation & Efficiency",
-    description: "Address rising energy demand by optimizing consumption, integrating renewable sources, and promoting behavioral changes to reduce wastage in households, offices, and grids.",
-    theme: "bg-gradient-to-br from-[#36D399] to-[#10B981]",
-    icon: "⚡"
-  },
-  {
-    title: "Water Conservation",
-    description: "Tackle urban water scarcity by tracking consumption, detecting leaks, improving wastewater recycling, and educating citizens for sustainable water use and distribution.",
-    theme: "bg-gradient-to-br from-[#0EA5E9] to-[#2563EB]",
-    icon: "💧"
-  },
-  {
-    title: "Sustainable Agriculture & Food Systems",
-    description: "Promote eco-friendly farming and food security by enhancing supply chains, diagnostics, inventory management, and localized production through data-driven solutions.",
-    theme: "bg-gradient-to-br from-[#F59E0B] to-[#D97706]",
-    icon: "🌱"
-  },
-  {
-    title: "Environmental Awareness & Education",
-    description: "Empower individuals and communities with knowledge and tools to adopt sustainable behaviors through interactive learning, gamified platforms, and awareness campaigns.",
-    theme: "bg-gradient-to-br from-[#A855F7] to-[#9333EA]",
-    icon: "🏙️"
-  },
-  {
-    title: "Environmental Policy & Governance",
-    description: "Strengthen environmental policies through data-driven tools for compliance tracking, transparent reporting, citizen feedback, and informed decision-making.",
-    theme: "bg-gradient-to-br from-[#14B8A6] to-[#06B6D4]",
-    icon: "🦋"
-  }    
+      title: "AI for Urban Resilience",
+      description: "Use AI and predictive analytics to manage stress on critical infrastructure like energy grids and water systems, making cities more adaptive and robust.",
+      theme: "bg-gradient-to-br from-[#60A5FA] to-[#4F46E5]",
+      icon: "🤖"
+    },
+    {
+      title: "Intelligent Ecosystems & Circular Economies",
+      description: "Leverage IoT, logistics tech, and AI to close the loop on waste, creating efficient supply chains for food and materials in a circular model.",
+      theme: "bg-gradient-to-br from-[#34D399] to-[#2DD4BF]",
+      icon: "🔄"
+    },
+    {
+      title: "Data for Impact: Visualization & Civic Tech",
+      description: "Bridge the gap between complex environmental data and people. Build intuitive dashboards, AR experiences, and civic platforms to empower citizens.",
+      theme: "bg-gradient-to-br from-[#A78BFA] to-[#EC4899]",
+      icon: "📊"
+    },
+    {
+      title: "The Green Metaverse & Future Economies",
+      description: "Design the next generation of environmental interaction using AR/VR and blockchain to create immersive experiences and new, sustainable economic models.",
+      theme: "bg-gradient-to-br from-[#7C3AED] to-[#1D4ED8]",
+      icon: "🌐"
+    },
+    {
+      title: "Climate AI & Predictive Futures",
+      description: "Build deep-tech machine learning models to forecast environmental events like smog, floods, and agricultural yields, enabling proactive crisis management.",
+      theme: "bg-gradient-to-br from-[#FB923C] to-[#EF4444]",
+      icon: "🔮"
+    },
+    {
+      title: "GreenGuard: Cybersecurity for Critical Eco-Infrastructure",
+      description: "Defend our smart environmental systems by designing resilient security frameworks, threat detection systems, and zero-trust architectures for eco-infrastructure.",
+      theme: "bg-gradient-to-br from-[#64748B] to-[#334155]",
+      icon: "🛡️"
+    }
   ];
 
   return (
