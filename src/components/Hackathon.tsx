@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Space_Grotesk } from "next/font/google";
+import Image from "next/image";
 
 const spaceGrotesk = Space_Grotesk({
   weight: ["400", "600"],
@@ -65,10 +66,13 @@ export function Hackathon() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 style={{ maxHeight: '40vh' }}
               >
-                <img 
+                <Image 
                   src="/ecocode_banner.png" 
                   alt="EcoCode Banner" 
+                  width={1200}
+                  height={400}
                   className="h-full w-auto object-cover"
+                  priority
                 />
               </motion.div>
             </div>

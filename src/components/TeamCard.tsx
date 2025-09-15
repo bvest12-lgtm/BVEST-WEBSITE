@@ -35,10 +35,7 @@ export function TeamCard({
       {/* Photo container */}
       <div className="relative h-64 overflow-hidden">
         <Image
-          src={
-            photoUrl ||
-            "https://static.vecteezy.com/system/resources/thumbnails/024/080/181/small_2x/green-and-black-background-gradient-illustration-free-photo.jpg"
-          }
+          src={photoUrl || "/team/placeholder.jpg"}
           alt={name}
           fill
           className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -93,65 +90,65 @@ export function TeamCard({
 export function TeamCardGrid() {
   const teamMembers = [
     {
-      name: "John Doe",
-      role: "President",
-      photoUrl: "https://static.vecteezy.com/system/resources/thumbnails/024/080/181/small_2x/green-and-black-background-gradient-illustration-free-photo.jpg",
-      linkedinUrl: "#",
-      instagramUrl: "#",
+      name: "Shivang Gambhir",
+      role: "Core Team Lead",
+      photoUrl: "/core/shivang.jpg",  // Core Team Lead
+      linkedinUrl: "https://www.linkedin.com/in/shivang-gambhir08?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      instagramUrl: "https://www.instagram.com/gambhir__shivang?igsh=Z3VpYnN2ZWEyaGpz&utm_source=qr",
     },
     {
-      name: "Jane Smith",
-      role: "Vice President",
-      photoUrl: "https://static.vecteezy.com/system/resources/thumbnails/024/080/181/small_2x/green-and-black-background-gradient-illustration-free-photo.jpg",
-      linkedinUrl: "#",
-      instagramUrl: "#",
+      name: "Maitri Karn",
+      role: "Core Team",
+      photoUrl: "/core/maitri.jpg",  // Core Team
+      linkedinUrl: "https://www.linkedin.com/in/maitri123",
+      instagramUrl: "https://www.instagram.com/maitrikarn?igsh=dW9jM2MyNGM4OXdp",
     },
     {
-      name: "Mike Johnson",
-      role: "Technical Head",
-      photoUrl: "https://static.vecteezy.com/system/resources/thumbnails/024/080/181/small_2x/green-and-black-background-gradient-illustration-free-photo.jpg",
-      linkedinUrl: "#",
-      instagramUrl: "#",
+      name: "Diya Dandu",
+      role: "Core Team",
+      photoUrl: "/core/diya_dandu.jpeg",  // Core Team
+      linkedinUrl: "https://www.linkedin.com/in/diya-dandu?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+      instagramUrl: "https://www.instagram.com/diya.dandu?igsh=MW5iODUycWpzaG80bQ%3D%3D&utm_source=qr",
     },
     {
-      name: "Sarah Williams",
-      role: "Marketing Head",
-      photoUrl: "https://static.vecteezy.com/system/resources/thumbnails/024/080/181/small_2x/green-and-black-background-gradient-illustration-free-photo.jpg",
-      linkedinUrl: "#",
-      instagramUrl: "#",
+      name: "Khushi Khanna",
+      role: "Core Team",
+      photoUrl: "/core/khushi_khanna.jpg",  // Core Team
+      linkedinUrl: "https://www.linkedin.com/in/khushi-khanna-191143296?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
+      instagramUrl: "https://www.instagram.com/khushikhanna_a?igsh=MWU2Zm55ZGlpZTBmbg==",
     },
     {
       name: "David Brown",
       role: "Operations Head",
-      photoUrl: "https://static.vecteezy.com/system/resources/thumbnails/024/080/181/small_2x/green-and-black-background-gradient-illustration-free-photo.jpg",
+      photoUrl: "/path/to/david.jpg",  // Update this path
       linkedinUrl: "#",
       instagramUrl: "#",
     },
     {
       name: "Emily Davis",
       role: "Design Lead",
-      photoUrl: "https://static.vecteezy.com/system/resources/thumbnails/024/080/181/small_2x/green-and-black-background-gradient-illustration-free-photo.jpg",
+      photoUrl: "/path/to/emily.jpg",  // Update this path
       linkedinUrl: "#",
       instagramUrl: "#",
     },
     {
       name: "Robert Wilson",
       role: "Content Lead",
-      photoUrl: "https://static.vecteezy.com/system/resources/thumbnails/024/080/181/small_2x/green-and-black-background-gradient-illustration-free-photo.jpg",
+      photoUrl: "/path/to/robert.jpg",  // Update this path
       linkedinUrl: "#",
       instagramUrl: "#",
     },
     {
       name: "Lisa Anderson",
       role: "PR Head",
-      photoUrl: "https://static.vecteezy.com/system/resources/thumbnails/024/080/181/small_2x/green-and-black-background-gradient-illustration-free-photo.jpg",
+      photoUrl: "/path/to/lisa.jpg",  // Update this path
       linkedinUrl: "#",
       instagramUrl: "#",
     },
     {
       name: "Michael Taylor",
       role: "Event Coordinator",
-      photoUrl: "https://static.vecteezy.com/system/resources/thumbnails/024/080/181/small_2x/green-and-black-background-gradient-illustration-free-photo.jpg",
+      photoUrl: "/path/to/michael.jpg",  // Update this path
       linkedinUrl: "#",
       instagramUrl: "#",
     },

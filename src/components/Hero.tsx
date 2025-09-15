@@ -1,7 +1,6 @@
 "use client";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import { Space_Grotesk } from "next/font/google";
-import { Berkshire_Swash } from "next/font/google";
 import { BiRightArrow } from "react-icons/bi";
 import Image from "next/image";
 import Link from "next/link";
@@ -21,9 +20,9 @@ const TypewriterText = ({ text }: TypewriterTextProps) => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
-  const [typingSpeed] = useState(150);
   const [loopNum, setLoopNum] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const typingSpeed = 150;
 
   useEffect(() => {
     const handleTyping = () => {

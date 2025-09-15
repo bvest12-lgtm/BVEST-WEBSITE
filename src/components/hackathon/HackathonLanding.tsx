@@ -1,6 +1,7 @@
 "use client";
 import { Space_Grotesk } from "next/font/google";
 import { motion } from "framer-motion";
+import { useEffect } from 'react';
 import {
   FaTrophy,
   FaCalendarAlt,
@@ -15,6 +16,16 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export function HackathonLanding() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    script.async = true;
+    script.defer = true;
+    document.body.appendChild(script);
+    return () => {
+      document.body.removeChild(script);
+    }
+  }, []);
   return (
     <section className="relative overflow-hidden py-12 md:py-32 px-4 sm:px-6 lg:px-8 text-white">
       <div className="max-w-7xl mx-auto relative ">
@@ -51,18 +62,17 @@ export function HackathonLanding() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4"
+            className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4"
           >
-            <a
-              href="#register"
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-green-500 to-blue-600 hover:from-green-600 hover:to-blue-700 text-white font-semibold rounded-full shadow-lg hover:shadow-xl hover:shadow-blue-500/20 transition-all duration-300 flex items-center justify-center gap-2 text-sm sm:text-base"
-            >
-              Register Now
-              <FaArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
-            </a>
+            <div 
+              className="apply-button" 
+              data-hackathon-slug="ecocode" 
+              data-button-theme="light"
+              style={{ height: '44px', width: '312px' }}
+            ></div>
             <a
               href="#about"
-              className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full backdrop-blur-sm transition-all duration-300 text-sm sm:text-base"
+              className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full backdrop-blur-sm transition-all duration-300 text-sm sm:text-base whitespace-nowrap"
             >
               Learn More
             </a>
@@ -197,18 +207,3 @@ function StatCard({
     </motion.div>
   );
 }
-
-// Add this to your global CSS
-/* 
-@keyframes float {
-  0% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
-  100% { transform: translateY(0px); }
-}
-.animate-float {
-  animation: float 8s ease-in-out infinite;
-}
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-*/

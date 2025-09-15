@@ -3,8 +3,8 @@
 import { HackathonLanding } from "@/components/hackathon/HackathonLanding";
 import { HackathonAbout } from "@/components/hackathon/HackathonAbout";
 import Timeline from "@/components/Timeline";
-import HowToApply from "@/components/HowToApply";
 import ProblemStatements from "@/components/ProblemStatements";
+import { FAQ } from "@/components/FAQ";
 
 export default function EcoCodePage() {
   return (
@@ -32,6 +32,10 @@ export default function EcoCodePage() {
           <div className="w-full max-w-6xl">
             <Timeline />
           </div>
+        </section>
+
+        <section id="faq" className="w-full">
+          <FAQ />
         </section>
       </div>
     </div>
