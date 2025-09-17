@@ -118,39 +118,18 @@ export function TeamCardGrid() {
       instagramUrl: "https://www.instagram.com/khushikhanna_a?igsh=MWU2Zm55ZGlpZTBmbg==",
     },
     {
-      name: "David Brown",
-      role: "Operations Head",
-      photoUrl: "/path/to/david.jpg",  // Update this path
-      linkedinUrl: "#",
-      instagramUrl: "#",
+      name: "Arnav Goel",
+      role: "Core Team",
+      photoUrl: "/core/arnav.jpg",  // Update this path
+      linkedinUrl: "https://www.linkedin.com/in/arnav-goel-957035248/",
+      instagramUrl: "https://www.instagram.com/arnavgoel_?igsh=enNpZGhkNWJqMmc3",
     },
     {
-      name: "Emily Davis",
-      role: "Design Lead",
-      photoUrl: "/path/to/emily.jpg",  // Update this path
-      linkedinUrl: "#",
-      instagramUrl: "#",
-    },
-    {
-      name: "Robert Wilson",
-      role: "Content Lead",
-      photoUrl: "/path/to/robert.jpg",  // Update this path
-      linkedinUrl: "#",
-      instagramUrl: "#",
-    },
-    {
-      name: "Lisa Anderson",
-      role: "PR Head",
-      photoUrl: "/path/to/lisa.jpg",  // Update this path
-      linkedinUrl: "#",
-      instagramUrl: "#",
-    },
-    {
-      name: "Michael Taylor",
-      role: "Event Coordinator",
-      photoUrl: "/path/to/michael.jpg",  // Update this path
-      linkedinUrl: "#",
-      instagramUrl: "#",
+      name: "Khushi Agarwal",
+      role: "Core Team",
+      photoUrl: "/core/khushi_aggarwal.jpg",  // Update this path
+      linkedinUrl: "https://www.linkedin.com/in/khushi-agarwal-607701367/",
+      instagramUrl: "https://www.instagram.com/agarwal_khushi62?igsh=Z25zOGUzNGd1dzU3",
     },
   ];
 

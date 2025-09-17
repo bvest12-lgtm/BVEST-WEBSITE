@@ -79,7 +79,7 @@ export function ContactUs() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-white">Email Us</h3>
-                <p className="text-gray-400">contact@bvest.com</p>
+                <p className="text-gray-400">bvest12event@bvcoend.ac.in</p>
               </div>
             </div>
 
@@ -91,7 +91,8 @@ export function ContactUs() {
               </div>
               <div>
                 <h3 className="text-lg font-semibold text-white">Call Us</h3>
-                <p className="text-gray-400">+91 12345 67890</p>
+                <p className="text-gray-400">+91 92155 55867</p>
+                <p className="text-gray-400">+91 98736 71119</p>
               </div>
             </div>
 
