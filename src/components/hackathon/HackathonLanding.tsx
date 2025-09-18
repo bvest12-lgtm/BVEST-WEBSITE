@@ -1,7 +1,7 @@
 "use client";
 import { Space_Grotesk } from "next/font/google";
 import { motion } from "framer-motion";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 import {
   FaTrophy,
   FaCalendarAlt,
@@ -16,16 +16,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export function HackathonLanding() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://apply.devfolio.co/v2/sdk.js';
-    script.async = true;
-    script.defer = true;
-    document.body.appendChild(script);
-    return () => {
-      document.body.removeChild(script);
-    }
-  }, []);
+
   return (
     <section className="relative overflow-hidden py-12 md:py-32 px-4 sm:px-6 lg:px-8 text-white">
       <div className="max-w-7xl mx-auto relative ">
@@ -64,12 +55,21 @@ export function HackathonLanding() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-4"
           >
-            <div 
-              className="apply-button" 
-              data-hackathon-slug="ecocode" 
-              data-button-theme="light"
-              style={{ height: '44px', width: '312px' }}
-            ></div>
+            {/* Register Now Button */}
+            <a
+              href="https://ecocode.devfolio.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative px-6 sm:px-8 py-3 sm:py-4 text-white font-medium rounded-full transition-all duration-300 text-sm sm:text-base whitespace-nowrap group overflow-hidden"
+            >
+              <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div className="absolute inset-0.5 rounded-full bg-gray-900"></div>
+              <div className="relative flex items-center gap-2">
+                Apply Now
+                <FaArrowRight className="transition-transform duration-300 group-hover:translate-x-1" />
+              </div>
+            </a>
+
             <a
               href="#about"
               className="px-6 sm:px-8 py-3 sm:py-4 bg-white/10 hover:bg-white/20 text-white font-medium rounded-full backdrop-blur-sm transition-all duration-300 text-sm sm:text-base whitespace-nowrap"
@@ -89,7 +89,7 @@ export function HackathonLanding() {
         >
           <StatCard
             icon={<FaTrophy className="w-6 h-6" />}
-            value="-"
+            value="₹15 Lakh"
             label="In Prizes"
             color="from-yellow-400 to-yellow-600"
           />
@@ -133,74 +133,82 @@ function StatCard({
   color: string;
 }) {
   return (
-    <motion.div 
+    <motion.div
       className="p-2 sm:p-4 md:p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:border-white/20 transition-all h-full flex flex-col items-center text-center w-full group"
-      whileHover={{ 
+      whileHover={{
         y: -5,
         scale: 1.03,
-        boxShadow: '0 10px 30px -5px rgba(0, 0, 0, 0.3)',
-        background: 'rgba(255, 255, 255, 0.08)'
+        boxShadow: "0 10px 30px -5px rgba(0, 0, 0, 0.3)",
+        background: "rgba(255, 255, 255, 0.08)",
       }}
-      transition={{ type: 'spring', stiffness: 400, damping: 15 }}
+      transition={{ type: "spring", stiffness: 400, damping: 15 }}
     >
       <motion.div
-        className={`w-8 h-8 sm:w-16 sm:h-16 mb-1 sm:mb-3 rounded-full flex items-center justify-center text-white ${color.includes('from-') ? `bg-gradient-to-br ${color}` : ''}`}
+        className={`w-8 h-8 sm:w-16 sm:h-16 mb-1 sm:mb-3 rounded-full flex items-center justify-center text-white ${color.includes("from-") ? `bg-gradient-to-br ${color}` : ""}`}
         initial={{ scale: 0.8, opacity: 0 }}
-        whileInView={{ 
-          scale: 1, 
+        whileInView={{
+          scale: 1,
           opacity: 1,
-          transition: { 
-            type: 'spring', 
+          transition: {
+            type: "spring",
             stiffness: 100,
-            delay: 0.1 * (value === '200+' ? 0.5 : 1) // Reduced delay for participants
-          } 
+            delay: 0.1 * (value === "200+" ? 0.5 : 1),
+          },
         }}
         viewport={{ once: true }}
       >
         <motion.div
           whileHover={{ rotate: 10, scale: 1.1 }}
-          transition={{ type: 'spring', stiffness: 500 }}
+          transition={{ type: "spring", stiffness: 500 }}
         >
           {icon}
         </motion.div>
       </motion.div>
-      <motion.h3 
+      <motion.h3
         className="text-sm sm:text-2xl font-bold mb-0.5 sm:mb-1 bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-cyan-300"
         initial={{ opacity: 0, y: 10 }}
-        whileInView={{ 
-          opacity: 1, 
+        whileInView={{
+          opacity: 1,
           y: 0,
-          transition: { 
-            delay: value === '200+' ? 0.1 : 0.2 + (Number(value.match(/\d+/)?.[0] || 0) * 0.01)
-          } 
+          transition: {
+            delay:
+              value === "200+"
+                ? 0.1
+                : 0.2 +
+                  (Number(value.match(/\d+/)?.[0] || 0) * 0.01),
+          },
         }}
         viewport={{ once: true }}
       >
         {value}
       </motion.h3>
-      <motion.p 
+      <motion.p
         className="text-[10px] sm:text-sm text-white/80 leading-tight font-medium"
         initial={{ opacity: 0, y: 5 }}
-        whileInView={{ 
-          opacity: 1, 
+        whileInView={{
+          opacity: 1,
           y: 0,
-          transition: { 
-            delay: value === '200+' ? 0.15 : 0.2 + (Number(value.match(/\d+/)?.[0] || 0) * 0.01)
-          } 
+          transition: {
+            delay:
+              value === "200+"
+                ? 0.15
+                : 0.2 +
+                  (Number(value.match(/\d+/)?.[0] || 0) * 0.01),
+          },
         }}
         viewport={{ once: true }}
       >
         {label}
       </motion.p>
-      <motion.div 
+      <motion.div
         className="w-0 h-0.5 bg-gradient-to-r from-cyan-400 to-blue-500 mt-2"
         initial={{ width: 0 }}
-        whileInView={{ 
-          width: '50%',
-          transition: { 
-            delay: value === '200+' ? 0.2 : 0.3,
-            duration: 0.5
-          } 
+        whileInView={{
+          width: "50%",
+          transition: {
+            delay: value === "200+" ? 0.2 : 0.3,
+            duration: 0.5,
+          },
         }}
         viewport={{ once: true }}
       />

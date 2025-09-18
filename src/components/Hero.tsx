@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { Space_Grotesk } from "next/font/google";
 import { BiRightArrow } from "react-icons/bi";
+import { FaArrowUp } from "react-icons/fa";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
@@ -147,13 +148,13 @@ export function Hero() {
                   href="/ecocode"
                   className={`${spaceGrotesk.className} flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#36D399] to-[#38BDF8] text-black font-bold rounded-full hover:opacity-90 transition-opacity`}
                 >
-                  Hackathon <BiRightArrow className="inline-block" />
+                  Hackathon <FaArrowUp className="inline-block transform rotate-45" />
                 </Link>
                 <Link
                   href="/events"
                   className={`${spaceGrotesk.className} flex items-center justify-center gap-2 px-6 py-3 border-2 border-[#38BDF8] text-white font-bold rounded-full hover:bg-[#38BDF8] hover:bg-opacity-10 transition-colors`}
                 >
-                  Events <BiRightArrow className="inline-block" />
+                  Events <FaArrowUp className="inline-block transform rotate-45" />
                 </Link>
               </div>
             </motion.div>
@@ -193,9 +194,9 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll indicator - Hidden on mobile */}
         <motion.div
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center"
+          className="hidden sm:flex absolute bottom-8 left-1/2 transform -translate-x-1/2 flex-col items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}

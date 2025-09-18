@@ -64,38 +64,39 @@ export function Hackathon() {
   ];
 
   return (
-    <section id="hackathon" className="relative py-16 overflow-hidden">
-      <div className="relative max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="hackathon" className="relative py-8 md:py-16 overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative">
           {/* Main content */}
-          <div className="relative p-8 lg:p-12">
-            <div className="text-center mb-8">
+          <div className="relative p-4 sm:p-6 lg:p-10">
+            <div className="text-center mb-6 sm:mb-10">
               {/* Banner Image */}
               <motion.div
-                className="w-full max-w-3xl mx-auto mb-12 rounded-3xl overflow-hidden flex justify-center"
+                className="w-full max-w-5xl mx-auto mb-8 sm:mb-12 rounded-xl sm:rounded-2xl lg:rounded-3xl overflow-hidden flex justify-center"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                style={{ maxHeight: "40vh" }}
+                style={{ height: '30vh', maxHeight: '400px' }}
               >
                 <Image
                   src="/ecocode_banner.png"
                   alt="EcoCode Banner"
                   width={1200}
                   height={400}
-                  className="h-full w-auto object-cover"
+                  className="h-full w-full object-contain"
                   priority
+                  sizes="(max-width: 768px) 100vw, 80vw"
                 />
               </motion.div>
             </div>
 
             {/* 3-column grid */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
-                  className="bg-[#111827]/50 p-6 rounded-xl border border-[#1F2937]"
+                  className="h-full bg-[#111827]/50 p-5 sm:p-6 rounded-lg sm:rounded-xl border border-[#1F2937] hover:border-[#38BDF8]/50 transition-colors duration-300"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
@@ -121,8 +122,8 @@ export function Hackathon() {
             </div>
 
             {/* Buttons */}
-            <div className="mt-12 text-center">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="mt-10 sm:mt-12 text-center">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center">
                 <div
                   className="apply-button"
                   data-hackathon-slug="ecocode"
@@ -137,7 +138,7 @@ export function Hackathon() {
 
                 <Link
                   href="/ecocode"
-                  className="group relative px-8 py-3.5 border-2 border-[#38BDF8] text-[#E5E7EB] font-bold rounded-full overflow-hidden transition-all duration-300 hover:bg-[#38BDF8]/10"
+                  className="group relative px-6 sm:px-8 py-2.5 sm:py-3.5 border-2 border-[#38BDF8] text-[#E5E7EB] font-bold rounded-full overflow-hidden transition-all duration-300 hover:bg-[#38BDF8]/10 text-sm sm:text-base"
                 >
                   <span className="relative z-10 flex items-center justify-center gap-2">
                     <span>Learn More</span>
