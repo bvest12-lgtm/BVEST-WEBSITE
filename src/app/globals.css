@@ -2,15 +2,16 @@
 
 :root {
   --background: #000000;
-  --foreground: #E5E7EB;
-  --primary: #36D399;
-  --secondary: #38BDF8;
-  --accent: #86EFAC;
+  --foreground: #e5e7eb;
+  --primary: #36d399;
+  --secondary: #38bdf8;
+  --accent: #86efac;
 }
 
 /* Custom Animations */
 @keyframes float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0) translateX(0);
   }
   25% {
@@ -25,7 +26,8 @@
 }
 
 @keyframes pulse {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0.6;
   }
   50% {
@@ -78,18 +80,18 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, #36D399, #38BDF8);
+  background: linear-gradient(to bottom, #36d399, #38bdf8);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(to bottom, #38BDF8, #2563EB);
+  background: linear-gradient(to bottom, #38bdf8, #2563eb);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   overflow-x: hidden;
 }
 

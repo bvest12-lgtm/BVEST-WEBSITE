@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Space_Grotesk } from "next/font/google";
 import Image from "next/image";
-import { useEffect } from 'react';
+import { useEffect } from "react";
 
 const spaceGrotesk = Space_Grotesk({
   weight: ["400", "600"],
@@ -12,19 +12,20 @@ const spaceGrotesk = Space_Grotesk({
 
 export function Hackathon() {
   useEffect(() => {
-    const script = document.createElement('script');
-    script.src = 'https://apply.devfolio.co/v2/sdk.js';
+    const script = document.createElement("script");
+    script.src = "https://apply.devfolio.co/v2/sdk.js";
     script.async = true;
     script.defer = true;
     document.body.appendChild(script);
     return () => {
       document.body.removeChild(script);
-    }
+    };
   }, []);
   const features = [
     {
       title: "Challenges",
-      description: "Tackle real-world problems in environmental technology, sustainable development, and green energy. Bring your A-game and code a solution that makes a difference.",
+      description:
+        "Tackle real-world problems in environmental technology, sustainable development, and green energy. Bring your A-game and code a solution that makes a difference.",
       icon: (
         <path
           strokeLinecap="round"
@@ -32,11 +33,12 @@ export function Hackathon() {
           strokeWidth={2}
           d="M5 13l4 4L19 7"
         />
-      )
+      ),
     },
     {
       title: "24 Hours of Intense Coding",
-      description: "From ideation to implementation, you'll have 24 hours to turn your ideas into reality with mentorship from industry experts.",
+      description:
+        "From ideation to implementation, you'll have 24 hours to turn your ideas into reality with mentorship from industry experts.",
       icon: (
         <path
           strokeLinecap="round"
@@ -44,11 +46,12 @@ export function Hackathon() {
           strokeWidth={2}
           d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
         />
-      )
+      ),
     },
     {
       title: "Exciting Prizes",
-      description: "Win amazing prizes, get mentorship from industry leaders, and the opportunity to implement your solution with our partners.",
+      description:
+        "Win amazing prizes, get mentorship from industry leaders, and the opportunity to implement your solution with our partners.",
       icon: (
         <path
           strokeLinecap="round"
@@ -56,8 +59,8 @@ export function Hackathon() {
           strokeWidth={2}
           d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
         />
-      )
-    }
+      ),
+    },
   ];
 
   return (
@@ -67,7 +70,6 @@ export function Hackathon() {
           {/* Main content */}
           <div className="relative p-8 lg:p-12">
             <div className="text-center mb-8">
-              
               {/* Banner Image */}
               <motion.div
                 className="w-full max-w-3xl mx-auto mb-12 rounded-3xl overflow-hidden flex justify-center"
@@ -75,11 +77,11 @@ export function Hackathon() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                style={{ maxHeight: '40vh' }}
+                style={{ maxHeight: "40vh" }}
               >
-                <Image 
-                  src="/ecocode_banner.png" 
-                  alt="EcoCode Banner" 
+                <Image
+                  src="/ecocode_banner.png"
+                  alt="EcoCode Banner"
                   width={1200}
                   height={400}
                   className="h-full w-auto object-cover"
@@ -113,9 +115,7 @@ export function Hackathon() {
                   <h3 className="text-xl font-bold text-white mb-2">
                     {feature.title}
                   </h3>
-                  <p className="text-[#D1D5DB]">
-                    {feature.description}
-                  </p>
+                  <p className="text-[#D1D5DB]">{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -123,15 +123,15 @@ export function Hackathon() {
             {/* Buttons */}
             <div className="mt-12 text-center">
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <div 
-                  className="apply-button" 
-                  data-hackathon-slug="ecocode" 
+                <div
+                  className="apply-button"
+                  data-hackathon-slug="ecocode"
                   data-button-theme="light"
-                  style={{ 
-                    height: '44px', 
-                    width: '312px',
-                    borderRadius: '9999px',
-                    overflow: 'hidden'
+                  style={{
+                    height: "44px",
+                    width: "312px",
+                    borderRadius: "9999px",
+                    overflow: "hidden",
                   }}
                 ></div>
 

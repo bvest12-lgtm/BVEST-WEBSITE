@@ -17,6 +17,25 @@ const ProblemStatementCard: React.FC<ProblemStatementCardProps> = ({
   index,
   icon,
 }) => {
+  const handleDownload = () => {
+    // Create a filename based on the title (remove special characters and spaces)
+    const filename = title
+      .toLowerCase()
+      .replace(/[^a-z0-9]/g, "-")
+      .replace(/-+/g, "-")
+      .replace(/^-|-$/g, "");
+
+    // Create the download link
+    const link = document.createElement("a");
+    link.href = `/problem-statements/${filename}.pdf`;
+    link.download = `${title} - Problem Statement.pdf`;
+    link.target = "_blank";
+
+    // Trigger the download
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -48,6 +67,7 @@ const ProblemStatementCard: React.FC<ProblemStatementCardProps> = ({
 
           {/* Button */}
           <motion.button
+            onClick={handleDownload}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
             className="mt-auto w-full py-2 px-4 bg-gradient-to-r from-white/10 to-white/5 hover:from-white/20 hover:to-white/10 text-white font-semibold rounded-lg transition-all duration-300 border border-white/20 hover:border-white/30 backdrop-blur-sm group-hover:shadow-lg text-sm"
@@ -79,40 +99,46 @@ const ProblemStatements: React.FC = () => {
   const problemStatements = [
     {
       title: "AI for Urban Resilience",
-      description: "Use AI and predictive analytics to manage stress on critical infrastructure like energy grids and water systems, making cities more adaptive and robust.",
+      description:
+        "Use AI and predictive analytics to manage stress on critical infrastructure like energy grids and water systems, making cities more adaptive and robust.",
       theme: "bg-gradient-to-br from-[#60A5FA] to-[#4F46E5]",
-      icon: "🤖"
+      icon: "🤖",
     },
     {
       title: "Intelligent Ecosystems & Circular Economies",
-      description: "Leverage IoT, logistics tech, and AI to close the loop on waste, creating efficient supply chains for food and materials in a circular model.",
+      description:
+        "Leverage IoT, logistics tech, and AI to close the loop on waste, creating efficient supply chains for food and materials in a circular model.",
       theme: "bg-gradient-to-br from-[#34D399] to-[#2DD4BF]",
-      icon: "🔄"
+      icon: "🔄",
     },
     {
-      title: "Data for Impact: Visualization & Civic Tech",
-      description: "Bridge the gap between complex environmental data and people. Build intuitive dashboards, AR experiences, and civic platforms to empower citizens.",
+      title: "Data for Impact Visualization & Civic Tech",
+      description:
+        "Bridge the gap between complex environmental data and people. Build intuitive dashboards, AR experiences, and civic platforms to empower citizens.",
       theme: "bg-gradient-to-br from-[#A78BFA] to-[#EC4899]",
-      icon: "📊"
+      icon: "📊",
     },
     {
       title: "The Green Metaverse & Future Economies",
-      description: "Design the next generation of environmental interaction using AR/VR and blockchain to create immersive experiences and new, sustainable economic models.",
+      description:
+        "Design the next generation of environmental interaction using AR/VR and blockchain to create immersive experiences and new, sustainable economic models.",
       theme: "bg-gradient-to-br from-[#7C3AED] to-[#1D4ED8]",
-      icon: "🌐"
+      icon: "🌐",
     },
     {
       title: "Climate AI & Predictive Futures",
-      description: "Build deep-tech machine learning models to forecast environmental events like smog, floods, and agricultural yields, enabling proactive crisis management.",
+      description:
+        "Build deep-tech machine learning models to forecast environmental events like smog, floods, and agricultural yields, enabling proactive crisis management.",
       theme: "bg-gradient-to-br from-[#FB923C] to-[#EF4444]",
-      icon: "🔮"
+      icon: "🔮",
     },
     {
-      title: "GreenGuard: Cybersecurity for Critical Eco-Infrastructure",
-      description: "Defend our smart environmental systems by designing resilient security frameworks, threat detection systems, and zero-trust architectures for eco-infrastructure.",
+      title: "GreenGuard Cybersecurity for Critical Eco-Infrastructure",
+      description:
+        "Defend our smart environmental systems by designing resilient security frameworks, threat detection systems, and zero-trust architectures for eco-infrastructure.",
       theme: "bg-gradient-to-br from-[#64748B] to-[#334155]",
-      icon: "🛡️"
-    }
+      icon: "🛡️",
+    },
   ];
 
   return (
