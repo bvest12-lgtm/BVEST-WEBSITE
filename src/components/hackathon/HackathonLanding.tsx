@@ -89,7 +89,7 @@ export function HackathonLanding() {
         >
           <StatCard
             icon={<FaTrophy className="w-6 h-6" />}
-            value="₹15 Lakh"
+            value="₹20 Lakh"
             label="In Prizes"
             color="from-yellow-400 to-yellow-600"
           />
