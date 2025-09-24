@@ -11,11 +11,11 @@ type FAQItem = {
 const faqData: FAQItem[] = [
   {
     question: "What is BVEST?",
-    answer: "BVEST is the official and Annual Technical Fest of Bharati Vidyapeeth&apos;s College of Engineering, New Delhi."
+    answer: "BVEST is the Official and Annual Technical Fest of Bharati Vidyapeeth's College of Engineering, New Delhi."
   },
   {
     question: "What is BVEST'25?",
-    answer: "BVEST 2025 is the current and 12th edition of BVCOE&apos;s annual Technical Fest, being managed by the Department of Electronics and Communication Engineering"
+    answer: "BVEST 2025 is the current and 12th edition of BVCOE's annual Technical Fest, being managed by the Department of Electronics and Communication Engineering"
   },
   {
     question: "When is it?",
@@ -23,7 +23,7 @@ const faqData: FAQItem[] = [
   },
   {
     question: "What type of events will be there?",
-    answer: "BVEST'25 brings before you its flagship hackathon, EcoCode and 15+ events comprising gaming, coding, robot wars, ideathons, and much more!"
+    answer: "BVEST'25 features a diverse lineup of events, including coding and DSA competitions, ideathons, robotics and drone challenges, automation and hardware project showcases, gaming-tech fusions with BGMI, quizzes on technology and innovation, JAM and poster-making contests, and case-study and design competitions, offering something for every tech enthusiast, gamer, and innovator!"
   },
   {
     question: "Who can take part?",
@@ -46,12 +46,8 @@ const faqData: FAQItem[] = [
     answer: "You can check out the 'Events' section on our website and discover the events and their registration links there."
   },
   {
-    question: "What is the registration fee?",
-    answer: "The registration fee is free for Hackathon and some events and is paid for the rest."
-  },
-  {
     question: "Will I be provided with any accommodation?",
-    answer: "No, at this point we are not providing the participants for BVEST with any accommodation."
+    answer: "Yes, the students who are selected in the Abstract Round and then clear the PPT round on the day of hackathon will be provided with accommodation."
   }
 ];
 
@@ -128,27 +124,6 @@ export function FAQ() {
             </motion.div>
           ))}
         </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-12 text-center"
-        >
-          <p className="text-gray-300 mb-6">
-            Still have questions? We&apos;re here to help!
-          </p>
-          <a
-            href="#contact"
-            className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-[#36D399] to-[#38BDF8] text-white font-medium rounded-lg hover:opacity-90 transition-all duration-300 transform hover:scale-105"
-          >
-            Contact Us
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
-              <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-            </svg>
-          </a>
-        </motion.div>
       </div>
     </section>
   );
