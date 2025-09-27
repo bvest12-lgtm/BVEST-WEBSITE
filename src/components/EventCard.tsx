@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
+import { FaDownload } from "react-icons/fa";
 
 interface EventCardProps {
   title: string;
@@ -71,8 +72,8 @@ export function EventCard({
         {/* Description with expandable functionality */}
         <div className="mb-4">
           <div className={`text-[#D1D5DB] text-sm leading-relaxed ${!isExpanded ? 'line-clamp-3' : ''}`}>
-            {description}
-          </div>
+          {description}
+        </div>
           {description.length > 150 && (
             <button
               onClick={toggleDescription}
@@ -102,18 +103,60 @@ export function EventCard({
 
         {/* Buttons Container */}
         <div className="space-y-3">
-          {/* Register Button */}
-          <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            onClick={() => {
-              if (redirectUrl && redirectUrl !== "#") {
-                window.open(redirectUrl, "_blank");
-              }
-            }}
-            className="group/btn relative w-full px-6 py-3 bg-gradient-to-r from-[#36D399] to-[#38BDF8] text-black font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#36D399]/30"
-          >
-            <span className="relative z-10 flex items-center justify-center gap-2">
+          {/* Register Button - Split for Case-e-Khaas */}
+          {title === "Case-e-Khaas" ? (
+            <div className="flex w-full gap-2">
+              {/* Download Problem Statement Button - Left */}
+              <motion.a
+                href="/case-e-khaas_problem_statement.pdf"
+                download="Case-e-Khaas_Problem_Statement.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="group/download relative flex-1 px-3 py-1 bg-gradient-to-r from-[#36D399] to-[#38BDF8] text-black font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#36D399]/30 flex items-center justify-center gap-2"
+              >
+                <FaDownload className="w-4 h-4" />
+                <span className="text-xs sm:text-sm">Problem Statement</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#38BDF8] to-[#2563EB] opacity-0 group-hover/download:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </motion.a>
+              
+              {/* Register Now Button - Right */}
+              <motion.a
+                href={redirectUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                className="group/register relative flex-1 px-4 py-3 bg-gradient-to-r from-[#36D399] to-[#38BDF8] text-black font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#36D399]/30 flex items-center justify-center gap-2"
+              >
+                <span className="text-xs sm:text-sm">Register Now</span>
+                <svg
+                  className="w-4 h-4 transform group-hover/register:translate-x-1 transition-transform duration-300"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M14 5l7 7m0 0l-7 7m7-7H3"
+                  />
+                </svg>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#38BDF8] to-[#2563EB] opacity-0 group-hover/register:opacity-100 transition-opacity duration-300 -z-10"></div>
+              </motion.a>
+            </div>
+          ) : (
+            // Original Register Button for other events
+            <motion.a
+              href={redirectUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="group/btn relative w-full px-6 py-3 bg-gradient-to-r from-[#36D399] to-[#38BDF8] text-black font-semibold rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-[#36D399]/30 flex items-center justify-center gap-2"
+            >
               <span>Register Now</span>
               <svg
                 className="w-4 h-4 transform group-hover/btn:translate-x-1 transition-transform duration-300"
@@ -128,9 +171,10 @@ export function EventCard({
                   d="M14 5l7 7m0 0l-7 7m7-7H3"
                 />
               </svg>
-            </span>
-            <div className="absolute inset-0 bg-gradient-to-r from-[#38BDF8] to-[#2563EB] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300"></div>
-          </motion.button>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#38BDF8] to-[#2563EB] opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 -z-10"></div>
+            </motion.a>
+          )}
+
 
           {/* Participants Group Button - Only show if whatsappLink is provided */}
           {whatsappLink && whatsappLink !== "..." && (
