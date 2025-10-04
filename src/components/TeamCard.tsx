@@ -97,7 +97,7 @@ export function TeamCardGrid() {
       instagramUrl: "https://www.instagram.com/gambhir__shivang?igsh=Z3VpYnN2ZWEyaGpz&utm_source=qr",
     },
     {
-      name: "Maitri Karn",
+      name: "Maitri",
       role: "Core Team",
       photoUrl: "/core/maitri.jpg",  // Core Team
       linkedinUrl: "https://www.linkedin.com/in/maitri123",
